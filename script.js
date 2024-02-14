@@ -39,6 +39,52 @@ function efectoHabilidades(){
 window.onscroll = function(){
     efectoHabilidades();
 }
+function isValidForm() {
+    return true;
+}
+function enviarCorreo() {
+    const to = 'rcaneloarevalo@gmail.com';
+    const subject = 'Asunto del correo';
+    const text = 'Cuerpo del correo';
+
+    fetch('/send-email', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ to, subject, text })
+    })
+    .then(response => {
+        if (response.ok) {
+            console.log('Correo electrónico enviado correctamente');
+        } else {
+            console.error('Error al enviar el correo electrónico');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+}
+document.getElementById("enviarEmail").addEventListener("click", function(){
+
+    if(isValidForm()){
+        enviarCorreo()
+        Swal.fire(
+            {
+            icon: "success",
+            title: "Email enviado correctamente.",
+            text: "Espere a recibir su respuesta, gracias por contactar conmigo."
+            }
+        );
+    }else{
+        Swal.fire({
+            icon: "error",
+            title: "Error al enviar el email.",
+            text: "Vuelva a intentarlo de nuevo."
+          });
+    }
+
+})
 
 document.getElementById("descargarCV").addEventListener("click", function() {
     // Crear un enlace temporal

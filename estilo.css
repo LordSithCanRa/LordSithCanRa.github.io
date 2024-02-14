@@ -5,13 +5,18 @@
     margin: 0;
     padding: 0;
 }
+:root {
+    --color-primary: #1CB698; 
+    --color-oscuro: #1e2326;
+    --color-fondo-light: #252A2E;
+}
 html{
     /* me permite deslizar cuando hago clic en los links del menu */
     scroll-behavior: smooth;
 }
 /* MENU */
 .contenedor-header{
-    background: #1e2326;
+    background:var(--color-oscuro);
     position: fixed;
     width: 100%;
     top: 0;
@@ -58,12 +63,15 @@ html{
 /* SECCION I N I C I O */
 .inicio{
     background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
-    url(img/fondo.jpg);
+    url(img/gato_code.gif);
+    /*url(img/fondo.jpg);*/
     background-size: cover;
     height: 100vh;
     color: #fff;
     display: flex;
     align-items: center;
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen de fondo */
 }
 .inicio .contenido-banner{
     padding: 20px;
@@ -647,6 +655,56 @@ footer .arriba{
     border-radius: 50%;
     line-height: 50px;
     font-size: 18px;
+}
+.menu-puntos {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 1000;
+}
+.menu-puntos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: calc(100% + 0px);
+    background-color: #178f77;
+    border-radius: 50px;
+    z-index: 999;
+}
+.menu-puntos a {
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #1CB698;
+    border-radius: 50%;
+    margin: 10px 0;
+    text-decoration: none;
+    position: relative;
+    z-index: 1000;
+}
+.menu-puntos a span {
+    display: none;
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+.menu-puntos a:hover span {
+    display: block;
+}
+.menu-puntos a:not(:last-child) {
+    margin-bottom: 20px; /* Espacio entre los puntos */
 }
 /* SECCION RESPONSIVE */
 @media screen and (max-width:980px){

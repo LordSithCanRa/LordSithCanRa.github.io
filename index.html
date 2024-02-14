@@ -7,26 +7,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Portfolio</title>
     <link rel="stylesheet" href="estilo.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
-    <!-- MENU ENCABEZADO -->
+    <!-- INICIO -->
     <div class="contenedor-header">
         <header>
             <div class="logo">
-                <a href="#">RCA</a>
+                <a href="#inicio">Portfolio de Ramón Canelo Arévalo:</a>
             </div>
-            <nav id="nav">
-                <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">Inicio</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()">SOBRE MI</a></li>
-                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
-                    <li><a href="#curriculum" onclick="seleccionar()">CV</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">PROYECTOS</a></li>
-                    <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
-                </ul>
-            </nav>
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
-                <i class="fa-solid fa-bars"></i>
+            <div class="menu-puntos">
+                <a href="#inicio">
+                    <span>Inicio</span>
+                </a>
+                <a href="#sobremi">
+                    <span>SOBRE MI</span>
+                </a>
+                <a href="#skills">
+                    <span>SKILLS</span>
+                </a>
+                <a href="#curriculum">
+                    <span>EXPERIENCIA</span>
+                </a>
+                <a href="#portfolio">
+                    <span>CERTIFICACIONES</span>
+                </a>
+                <a href="#contacto">
+                    <span>CONTACTO</span>
+                </a>
             </div>
         </header>
     </div>
@@ -40,11 +48,9 @@
             <h1>Ramón Canelo Arévalo</h1>
             <h2>Desarrollador Web Front y Back</h2>
             <div class="redes">
-                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#"><i class="fa-brands fa-skype"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="#"><i class="fa-solid fa-rss"></i></a>
+                <a onclick="simulacionEnlace('CV-RamónCaneloArévalo.pdf')"><i class="fa-solid fa-file-lines"></i></a>
+                <a href="https://github.com/LordSithCanRa" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://es.linkedin.com/in/ram%C3%B3n-canelo-ar%C3%A9valo-b9182b18b" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
         </div>
     </section>
@@ -112,7 +118,7 @@
                             <span style="font-size: small;">ORACLE PLSQL</span>
                         </div>
                         <div class="interes">
-                            <i class="fa fa-pencil-square"></i>
+                            <i class="fa-solid fa-pen-ruler"></i>
                             <span style="font-size: small;">ORACLE APEX</span>
                         </div>
                         <div class="interes">
@@ -260,7 +266,7 @@
                         </div>
                     </div>
                     <div class="item izq">
-                        <h4>Aprendizaje continuo</h4>
+                        <h4><i class="fa-solid fa-screwdriver-wrench"></i> MANTENIMIENTO <i class="fa-solid fa-screwdriver-wrench"></i></h4>
                         <span class="casa"></span>
                         <span class="fecha"></span>
                         <p></p>
@@ -282,7 +288,7 @@
                         </div>
                     </div>
                     <div class="item der">
-                        <h4></h4>
+                        <h4><i class="fa-solid fa-screwdriver-wrench"></i> MANTENIMIENTO <i class="fa-solid fa-screwdriver-wrench"></i></h4>
                         <span class="casa"></span>
                         <span class="fecha"></span>
                         <p></p>
@@ -291,7 +297,7 @@
                         </div>
                     </div>
                     <div class="item der">
-                        <h4></h4>
+                        <h4><i class="fa-solid fa-screwdriver-wrench"></i> MANTENIMIENTO <i class="fa-solid fa-screwdriver-wrench"></i></h4>
                         <span class="casa"></span>
                         <span class="fecha"></span>
                         <p></p>
@@ -307,7 +313,7 @@
     <!-- SECCION PORTFOLIO -->
     <section id="portfolio" class="portfolio">
         <div class="contenido-seccion">
-            <h2>CERTIFICACIONES/TITULOS</h2>
+            <h2>CERTIFICACIONES</h2>
             <div class="galeria">
                 <div class="proyecto" onclick="simulacionEnlace('https://www.udemy.com/certificate/UC-c616e44c-8477-436d-afe5-66f1abdf1cbe/')">
                     <img src="img/JasperCert.png" alt="Imagen no disponible">
@@ -348,13 +354,14 @@
             <div class="fila">
                 <!-- Formulario -->
                 <div class="col">
+                    <!--
                     <input type="text" placeholder="Tú Nombre">
                     <input type="text" placeholder="Número telefónico">
                     <input type="text" placeholder="Dirección de correo">
-                    <input type="text" placeholder="Tema">
                     <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
-                    <button>
-                        Enviar Mensaje <i class="fa-solid fa-paper-plane"></i>
+                    -->
+                    <button id="enviarEmail">
+                        Enviar Correo <i class="fa-solid fa-paper-plane"></i>
                         <span class="overlay"></span>
                     </button>
                 </div>
@@ -385,11 +392,9 @@
             <i class="fa-solid fa-angles-up"></i>
         </a>
         <div class="redes">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-skype"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a href="#"><i class="fa-solid fa-rss"></i></a>
+            <a href="#" onclick="simulacionEnlace('CV-RamónCaneloArévalo.pdf')"><i class="fa-solid fa-file-lines"></i></a>
+            <a href="https://github.com/LordSithCanRa" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://es.linkedin.com/in/ram%C3%B3n-canelo-ar%C3%A9valo-b9182b18b" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
     </footer>
 
