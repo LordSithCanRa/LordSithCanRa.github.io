@@ -1,3 +1,4 @@
+
 let menuVisible = false;
 //Función que oculta o muestra el menu
 function mostrarOcultarMenu(){
@@ -100,6 +101,36 @@ document.getElementById("descargarCV").addEventListener("click", function() {
     // Eliminar el enlace temporal
     document.body.removeChild(enlace);
 });
+var modoNoche = false
+document.getElementById("seleccionModo").addEventListener("click", function(){
+    let icono = document.getElementById("modoIlu");
+    console.log(icono)
+    if(!modoNoche){
+        console.log("modo noche activo")
+        
+        icono.classList.remove("fa-solid", "fa-moon")
+        icono.classList.add("fa-solid", "fa-sun")
+
+        document.documentElement.style.setProperty('--color-items', '#be86eb');
+        document.documentElement.style.setProperty('--color-fondo-oscuro', '#9ef0e9');
+        document.documentElement.style.setProperty('--color-fondo-light', '#b3f3ee');
+        document.documentElement.style.setProperty('--color-letras', '#252525');
+
+
+        modoNoche = true
+    }else{
+        icono.classList.remove("fa-solid", "fa-sun")
+        icono.classList.add("fa-solid", "fa-moon")
+        document.documentElement.style.setProperty('--color-items', '#875abb');
+        document.documentElement.style.setProperty('--color-fondo-oscuro', '#111733');
+        document.documentElement.style.setProperty('--color-fondo-light', '#1a234e');
+        document.documentElement.style.setProperty('--color-letras', '#fff');
+
+        modoNoche = false
+    }
+    
+});
+
 
 function simulacionEnlace(url){
     // Crear un enlace temporal

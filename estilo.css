@@ -5,10 +5,24 @@
     margin: 0;
     padding: 0;
 }
-:root {
-    --color-primary: #1CB698; 
-    --color-oscuro: #1e2326;
+/* POR DEFECTO
+--color-items: #1CB698; 
+    --color-fondo-oscuro: #1e2326;
     --color-fondo-light: #252A2E;
+*/
+/*
+
+--color-items: #875abb; 
+--color-fondo-oscuro: #111733;
+--color-fondo-light: #1a234e;
+--color-letras: #fff;
+
+*/
+:root {
+    --color-items: #875abb; 
+    --color-fondo-oscuro: #111733;
+    --color-fondo-light: #1a234e;
+    --color-letras: #fff;
 }
 html{
     /* me permite deslizar cuando hago clic en los links del menu */
@@ -16,7 +30,7 @@ html{
 }
 /* MENU */
 .contenedor-header{
-    background:var(--color-oscuro);
+    background:var(--color-fondo-oscuro);
     position: fixed;
     width: 100%;
     top: 0;
@@ -34,7 +48,7 @@ html{
 .contenedor-header header .logo a{
     font-family: 'Righteous';
     font-size: 36px;
-    color: #1CB698;
+    color: var(--color-items);
     text-decoration: none;
 }
 .contenedor-header header ul{
@@ -43,18 +57,18 @@ html{
 }
 .contenedor-header header nav ul li a{
     text-align: none;
-    color: #fff;
+    color: var(--color-letras);
     margin: 0 15px;
     padding: 3px;
     transition: .5s;
     text-decoration: none;
 }
 .contenedor-header header nav ul li a:hover{
-    color: #1CB698;
+    color: var(--color-items);
 }
 .nav-responsive{
-    background-color: #1CB698;
-    color:#fff;
+    background-color: var(--color-items);
+    color:var(--color-letras);
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
@@ -62,20 +76,42 @@ html{
 }
 /* SECCION I N I C I O */
 .inicio{
-    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
-    url(img/gato_code.gif);
     /*url(img/fondo.jpg);*/
-    background-size: cover;
     height: 100vh;
-    color: #fff;
+    color: var(--color-letras);
     display: flex;
     align-items: center;
+
+    /*ELIMINAR TRAS EL AJUSTE*/
+    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+    url(img/gato_code.gif); /* Gato normal */
+    background-size: cover;
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir todo el contenedor */
+    background-position: center;
+    /*
+    animation: reverseGato 15s infinite;
+    AJUSTAR ANIMACION
+    */
+}
+@keyframes reverseGato {
+    0% {
+        background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+    url(img/gato_code.gif); /* Gato normal */
+    background-size: cover;
     background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen de fondo */
+    }
+    100% {
+        background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+    url(img/gato_code_reverse.gif); /* Gato al revés */
+    background-size: cover;
+    background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen de fondo */
+    }
 }
 .inicio .contenido-banner{
     padding: 20px;
-    background-color: #1e2326;
+    background-color: var(--color-fondo-oscuro);
     max-width: 350px;
     margin: auto;
     text-align: center;
@@ -83,7 +119,7 @@ html{
 }
 .inicio .contenido-banner img{
     margin-top: 40px;
-    border: 10px solid #1CB698;
+    border: 10px solid var(--color-items);
     display: block;
     width: 80%;
     margin: auto;
@@ -104,10 +140,10 @@ html{
     font-weight: normal;
 }
 .inicio .contenido-banner .redes a{
-    color: #fff;
+    color: var(--color-letras);
     display: inline-block;
     text-decoration: none;
-    border: 1px solid #fff;
+    border: 1px solid var(--color-letras);
     border-radius: 100%;
     width: 42px;
     height: 42px;
@@ -117,11 +153,11 @@ html{
     transition: .3s;
 }
 .inicio .contenido-banner .redes a:hover{
-    background-color: #1CB698;
+    background-color: var(--color-items);
 }
 .sobremi{
-    background-color: #1e2326;
-    color: #fff;
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-letras);
     padding: 50px 20px;
 }
 .sobremi .contenido-seccion{
@@ -141,7 +177,7 @@ html{
     margin-bottom: 20px;
 }
 .sobremi .contenido-seccion p span{
-    color: #1CB698;
+    color: var(--color-items);
     font-weight: bold;
 }
 .sobremi .fila{
@@ -164,11 +200,11 @@ html{
 }
 .sobremi .fila .col ul li strong{
     display: inline-block;
-    color: #1CB698;
+    color: var(--color-items);
     width: 130px;
 }
 .sobremi .fila .col ul li span{
-    background-color: #1CB698;
+    background-color: var(--color-items);
     padding: 3px;
     font-weight: bold;
     border-radius: 5px;
@@ -180,7 +216,7 @@ html{
 .sobremi .fila .col .contenedor-intereses .interes{
     width: 100px;
     height: 100px;
-    background-color: #252A2E;
+    background-color: var(--color-fondo-light);
     border-radius: 10px;
     margin: 0 15px 15px 0;
     display: flex;
@@ -189,7 +225,7 @@ html{
     justify-content: center;
     transition: .3s;
 }.sobremi .fila .col .contenedor-intereses .interes:hover{
-    background-color: #1CB698;
+    background-color: var(--color-items);
 }
 .sobremi .fila .col .contenedor-intereses .interes i{
     font-size: 30px;
@@ -198,13 +234,13 @@ html{
 .sobremi button{
     cursor: pointer;
     background-color: transparent;
-    border: 2px solid #fff;
+    border: 2px solid var(--color-letras);
     width: fit-content;
     display: block;
     margin: 20px auto;
     padding: 10px 22px;
     font-size: 16px;
-    color: #fff;
+    color: var(--color-letras);
     position: relative;
     z-index: 10;
 }
@@ -214,7 +250,7 @@ html{
     left: 0;
     width: 0;
     height: 100%;
-    background-color: #1CB698;
+    background-color: var(--color-items);
     z-index: -1;
     transition: 1s;
 }
@@ -223,8 +259,8 @@ html{
 }
 /* SECCION S K I L L S */
 .skills{
-    background-color: #252A2E;
-    color: #fff;
+    background-color: var(--color-fondo-light);
+    color: var(--color-letras);
     padding: 50px 20px;
 }
 .skills .contenido-seccion{
@@ -263,7 +299,7 @@ html{
     margin-bottom: 30px;
 }
 .skills .skill .progreso{
-    background-color: #1CB698;
+    background-color: var(--color-items);
     position: absolute;
     top: 0;
     left: 0;
@@ -273,7 +309,7 @@ html{
     position: absolute;
     height: 40px;
     width: 40px;
-    background-color: #1CB698;
+    background-color: var(--color-items);
     border-radius: 50px;
     line-height: 40px;
     text-align: center;
@@ -373,8 +409,8 @@ html{
 }
 /* SECCION CURRICULUM */
 .curriculum{
-    background-color: #1e2326;
-    color: #fff;
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-letras);
     padding: 50px 20px;
 }
 .curriculum .contenido-seccion{
@@ -402,15 +438,15 @@ html{
     margin-bottom: 25px;
 }
 .curriculum .fila .izquierda{
-    border-right: 2px solid #252A2E;
+    border-right: 2px solid var(--color-fondo-light);
 }
 .curriculum .fila .derecha{
-    border-left: 2px solid #252A2E;
+    border-left: 2px solid var(--color-fondo-light);
 }
 .curriculum .fila .item{
     padding: 25px;
     margin-bottom: 30px;
-    background-color: #252A2E;
+    background-color: var(--color-fondo-light);
     position: relative;
 }
 .curriculum .fila .item h4{
@@ -418,30 +454,30 @@ html{
     margin-bottom: 10px;
 }
 .curriculum .fila .item .casa{
-    color: #1CB698;
+    color: var(--color-items);
     font-size: 22px;
     font-weight: bold;
     display: block;
 }
 .curriculum .fila .item .fecha{
     display: block;
-    color: #1CB698;
+    color: var(--color-items);
     margin-bottom: 10px;
 }
 .curriculum .fila .item p{
     line-height: 24px;
 }
 .curriculum .fila .izq{
-    border-right: 2px solid #1CB698;
+    border-right: 2px solid var(--color-items);
     margin-right: 20px;
 }
 .curriculum .fila .der{
-    border-left: 2px solid #1CB698;
+    border-left: 2px solid var(--color-items);
     margin-left: 20px;
 }
 .curriculum .fila .item .conectori{
     height: 2px;
-    background-color: #1CB698;
+    background-color: var(--color-items);
     width: 47px;
     position: absolute;
     top: 50%;
@@ -453,14 +489,14 @@ html{
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background-color: #1CB698;
+    background-color: var(--color-items);
     float: right;
     position: relative;
     bottom: 4px;
 }
 .curriculum .fila .item .conectord{
     height: 2px;
-    background-color: #1CB698;
+    background-color: var(--color-items);
     width: 47px;
     position: absolute;
     top: 50%;
@@ -472,15 +508,15 @@ html{
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    background-color: #1CB698;
+    background-color: var(--color-items);
     float: left;
     position: relative;
     bottom: 4px;
 }
 /* SECCION PORTFOLIO */
 .portfolio{
-    background-color: #252A2E;
-    color: #fff;
+    background-color: var(--color-fondo-light);
+    color: var(--color-letras);
     padding: 50px 20px;
 }
 .portfolio .contenido-seccion{
@@ -537,8 +573,8 @@ html{
 /* SECCION CONTACTO */
 .contacto{
     background-image: url(img/contact_bg.png);
-    background-color: #1e2326;
-    color: #fff;
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-letras);
     padding: 50px 0;
 }
 .contacto .contenido-seccion{
@@ -565,20 +601,20 @@ html{
     padding: 18px;
     border: none;
     margin-bottom: 20px;
-    background-color: #252A2E;
-    color: #fff;
+    background-color: var(--color-fondo-light);
+    color: var(--color-letras);
     font-size: 18px;
 }
 .contacto button{
     cursor: pointer;
     background-color: transparent;
-    border: 2px solid #fff;
+    border: 2px solid var(--color-letras);
     width: fit-content;
     display: block;
     margin: 20px auto;
     padding: 10px 22px;
     font-size: 16px;
-    color: #fff;
+    color: var(--color-letras);
     position: relative;
     z-index: 10;
 }
@@ -588,7 +624,7 @@ html{
     left: 0;
     width: 0;
     height: 100%;
-    background-color: #1CB698;
+    background-color: var(--color-items);
     z-index: -1;
     transition: 1s;
 }
@@ -601,11 +637,12 @@ html{
 .contacto .col .info{
     position: absolute;
     top: 40%;
-    background-color: #252a2ede;
+    background-color: var(--color-fondo-light);
     padding: 20px;
-    max-swidth: 350px;
+    max-width: 350px;
     left: 50%;
     transform: translate(-50%, -50%);
+    opacity: 0.9;
 }
 .contacto .col .info ul{
     list-style: none;
@@ -614,13 +651,13 @@ html{
     margin-bottom: 20px;
 }
 .contacto .col .info ul li i{
-    color: #1CB698;
+    color: var(--color-items);
     display: inline-block;
     margin-right: 20px;
 }
 footer{
-    background-color: #252A2E;
-    color: #fff;
+    background-color: var(--color-fondo-light);
+    color: var(--color-letras);
     padding: 50px 0 30px 0;
     text-align: center;
     position: relative;
@@ -630,10 +667,10 @@ footer .redes{
     margin-bottom: 20px;
 }
 footer .redes a{
-    color: #fff;
+    color: var(--color-letras);
     display: inline-block;
     text-decoration: none;
-    border: 1px solid #fff;
+    border: 1px solid var(--color-letras);
     border-radius: 100%;
     width: 42px;
     height: 42px;
@@ -646,8 +683,8 @@ footer .arriba{
     display: block;
     width: 50px;
     height: 50px;
-    background-color: #1CB698;
-    color: #fff;
+    background-color: var(--color-items);
+    color: var(--color-letras);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -674,7 +711,7 @@ footer .arriba{
     transform: translateX(-50%);
     width: 5px;
     height: calc(100% + 0px);
-    background-color: #178f77;
+    background-color: #6c4796;
     border-radius: 50px;
     z-index: 999;
 }
@@ -682,7 +719,7 @@ footer .arriba{
     display: block;
     width: 15px;
     height: 15px;
-    background-color: #1CB698;
+    background-color: var(--color-items);
     border-radius: 50%;
     margin: 10px 0;
     text-decoration: none;
@@ -694,11 +731,12 @@ footer .arriba{
     position: absolute;
     top: -20px;
     right: 20px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.801);
     color: white;
     padding: 20px;
-    border-radius: 5px;
-    font-size: 12px;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: bold;
 }
 .menu-puntos a:hover span {
     display: block;
@@ -719,14 +757,14 @@ footer .arriba{
         position: absolute;
         right: 0;
         top: 75px;
-        background-color: #252A2E;
+        background-color: var(--color-fondo-light);
         width: 180px;
     }
     nav.responsive ul{
         display: block !important;
     }
     nav.responsive ul li{
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid var(--color-letras);
         padding: 10px 0;
     }
 }
