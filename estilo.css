@@ -84,7 +84,7 @@ html{
 
     /*ELIMINAR TRAS EL AJUSTE*/
     background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
-    url(img/gato_code.gif); /* Gato normal */
+    url(img/gato_code.gif);/* Gato normal */
     background-size: cover;
     background-size: cover; /* Ajusta el tamaño de la imagen de fondo para cubrir todo el contenedor */
     background-position: center;
