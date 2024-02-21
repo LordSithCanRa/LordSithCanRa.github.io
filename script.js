@@ -66,7 +66,7 @@ function enviarCorreo() {
         console.error('Error:', error);
     });
 }
-document.getElementById("enviarEmail").addEventListener("click", function(){
+/*document.getElementById("enviarEmail").addEventListener("click", function(){
 
     if(isValidForm()){
         enviarCorreo()
@@ -85,7 +85,7 @@ document.getElementById("enviarEmail").addEventListener("click", function(){
           });
     }
 
-})
+})*/
 
 document.getElementById("descargarCV").addEventListener("click", function() {
     // Crear un enlace temporal
@@ -111,16 +111,17 @@ document.getElementById("seleccionModo").addEventListener("click", function(){
         icono.classList.remove("fa-solid", "fa-moon")
         icono.classList.add("fa-solid", "fa-sun")
 
-        document.documentElement.style.setProperty('--color-items', '#be86eb');
-        document.documentElement.style.setProperty('--color-fondo-oscuro', '#9ef0e9');
-        document.documentElement.style.setProperty('--color-fondo-light', '#b3f3ee');
-        document.documentElement.style.setProperty('--color-letras', '#252525');
+        document.documentElement.style.setProperty('--color-items', '#634b5c');
+        document.documentElement.style.setProperty('--color-fondo-oscuro', '#807147');
+        document.documentElement.style.setProperty('--color-fondo-light', '#A6974E');
+        document.documentElement.style.setProperty('--color-letras', '#000000');
 
 
         modoNoche = true
     }else{
         icono.classList.remove("fa-solid", "fa-sun")
         icono.classList.add("fa-solid", "fa-moon")
+
         document.documentElement.style.setProperty('--color-items', '#875abb');
         document.documentElement.style.setProperty('--color-fondo-oscuro', '#111733');
         document.documentElement.style.setProperty('--color-fondo-light', '#1a234e');
