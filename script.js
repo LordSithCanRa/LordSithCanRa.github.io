@@ -111,9 +111,12 @@ document.getElementById("seleccionModo").addEventListener("click", function(){
         icono.classList.remove("fa-solid", "fa-moon")
         icono.classList.add("fa-solid", "fa-sun")
 
-        document.documentElement.style.setProperty('--color-items', '#634b5c');
+        /*document.documentElement.style.setProperty('--color-items', '#634b5c');
         document.documentElement.style.setProperty('--color-fondo-oscuro', '#807147');
-        document.documentElement.style.setProperty('--color-fondo-light', '#A6974E');
+        document.documentElement.style.setProperty('--color-fondo-light', '#A6974E');*/
+        document.documentElement.style.setProperty('--color-items', '#c3acdd');
+        document.documentElement.style.setProperty('--color-fondo-oscuro', '#596cc7');
+        document.documentElement.style.setProperty('--color-fondo-light', '#6678cc');
         document.documentElement.style.setProperty('--color-letras', '#000000');
 
 
