@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de Imágenes</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel='stylesheet' type='text/css' media='screen' href='background.css'>
+  
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 10px;
+      padding: 20px 20px 0; /* Margen a la izquierda y a la derecha, y margen superior */
+      margin-bottom: 25vh;
+    }
+
+    .image {
+      width: 100%;
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      z-index: 999;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    @media only screen and (max-width: 800px) {
+      footer {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      footer a {
+        padding: 20px;
+      }
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Agrega más imágenes según sea necesario -->
+  </div>
+  
+  <footer>
+    <a href="#">POLÍTICA DE PRIVACIDAD</a>
+    <a href="#">POLÍTICA DE COOKIES</a>
+    <a href="#">AVISO LEGAL</a>
+  </footer>
+</body>
+</html>

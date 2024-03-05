@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>SHOTGAME ~~ INICIO</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+            touch-action: none;
+            background-color: white;
+        }
+        .controls {
+            margin-top: 10px;
+        }
+        .colorPorDefecto{
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .colorPorDefecto[data-color="#000000"]{
+            background-color: #000000;
+        }
+        .colorPorDefecto[data-color="#303030"]{
+            background-color: #303030;   
+        }
+        .colorPorDefecto[data-color="#003af7"]{
+            background-color: #003af7;   
+        }
+        .colorPorDefecto[data-color="#ffffff"]{
+            background-color: #ffffff;   
+        }
+        .colorPorDefecto[data-color="#ff1900"]{
+            background-color: #ff1900;   
+        }
+        .colorPorDefecto[data-color="#14b346"]{
+            background-color: #14b346;   
+        }
+    </style>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../background.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../body.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../inicio2.css'>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>DESACATAOS</h1>
+            <input type="range" id="grosor" min="1" max="20" value="5">
+            <button class="colorPorDefecto" data-color="#303030"></button> 
+            <button class="colorPorDefecto" data-color="#003af7"></button> 
+            <button class="colorPorDefecto" data-color="#ffffff"></button>
+            <button class="colorPorDefecto" data-color="#ff1900"></button>
+            <button class="colorPorDefecto" data-color="#14b346"></button> 
+            <br>
+            <input type="color" id="colorPicker" value="#000000">
+            <canvas id="lienzo" width="500" height="500"></canvas>
+            <button id="retroceder">&lt;</button> 
+            <button id="avanzar">&gt;</button>
+            <br>
+            <button id="lapiz">Lápiz</button> 
+            <button id="cubo">Cubo</button>
+            <button id="borrador">Borrador</button>
+            <br>
+            <button id="borrarTodo">Borrar Todo</button> 
+        </div>
+    </div>
+    <div class="animateme">
+        <ul class="bg-bubbles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <script src="src/paint.js"></script>
+</body>
+</html>

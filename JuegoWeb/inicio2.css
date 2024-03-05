@@ -1,0 +1,48 @@
+.content {
+    text-align: center;
+}
+.content h1 {
+    font-family: 'Savage Arcade', sans-serif; 
+    font-size: 2.5rem;
+    color: #3a0949;
+}
+/* ESTILO PARA EL BOTON */
+.btn {
+    border: 3px solid #3a0949;
+    border-radius: 20px;
+    background-color: #3a094900;
+    width: 300px;
+    height: 50px;
+
+    /*FUENTE*/
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3a0949;
+
+    cursor: pointer;
+    /*background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 20px;*/
+}
+.btn:hover{
+    background-color: #9127b186;
+}
+
+/* ESTILO PARA EL ICONO +18 */
+.icon {
+    height: 1.5rem;
+    width: auto;
+    vertical-align: middle;
+}
+/* DESCRIPCION */
+.description {
+    margin-top: 20px;
+    font-size: 1rem;
+    width: 400px;
+}
+

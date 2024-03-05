@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'Savage Arcade';
+    src: url('src/Savage Arcade.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e69efc;
+    padding-bottom: 100px; /* Ajusta esta altura según la altura de tu footer */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+footer {
+    background-color: #44c767;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.content {
+    text-align: center;
+    margin-top: 100px;
+    padding: 20px;
+}
+
+.content h1 {
+    font-family: 'Savage Arcade', sans-serif; 
+    font-size: 2.5rem;
+    color: #3a0949;
+}
+/* ESTILO PARA EL BOTON */
+.btn {
+    border: 3px solid #3a0949;
+    border-radius: 20px;
+    background-color: #3a094900;
+    width: 300px;
+    height: 50px;
+
+    /*FUENTE*/
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3a0949;
+
+    cursor: pointer;
+    /*background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 20px;*/
+}
+.btn:hover{
+    background-color: #9127b186;
+}
+/* DESCRIPCION */
+.description {
+    margin-top: 15px;
+    color: #3a0949;
+}
+/* TEXTO RESTRICTIVO*/
+.age-restriction {
+    font-size: 1.5rem;
+}
+/* ESTILO PARA EL ICONO +18 */
+.icon {
+    height: 1.5rem;
+    width: auto;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 100%;
+    }
+    footer {
+        flex-direction: column;
+    }
+}
