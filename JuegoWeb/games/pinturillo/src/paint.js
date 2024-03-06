@@ -9,6 +9,14 @@ document.addEventListener('DOMContentLoaded', function () {
     var borradorActivado = false;
     var cuboActivo = false;
     
+    // Obtener el ancho y alto de la ventana del navegador
+    var vw = window.innerWidth;
+    var vh = window.innerHeight;
+
+    // Establecer el tamaño del canvas en función de vw y vh
+    canvas.width = vw * 0.9; // Por ejemplo, el canvas ocupará el 50% del ancho de la ventana
+    canvas.height = vh * 0.7; // Por ejemplo, el canvas ocupará el 50% de la altura de la ventana
+
     pintarFondo()
 
     function pintarFondo(){
