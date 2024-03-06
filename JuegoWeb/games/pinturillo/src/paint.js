@@ -8,6 +8,16 @@ document.addEventListener('DOMContentLoaded', function () {
     var grosor = document.getElementById('grosor').value;
     var borradorActivado = false;
     var cuboActivo = false;
+    
+    pintarFondo()
+
+    function pintarFondo(){
+        document.getElementById('colorPicker').value = '#FFFFFF'
+        //cuboActivo = true;
+        rellenarSuperficie(0,0)
+        //cuboActivo = false;
+        document.getElementById('colorPicker').value = color
+    }
 
     function iniciarPintado(evento) {
         var coordinates = getCanvasCoordinates(evento);
@@ -103,18 +113,20 @@ document.addEventListener('DOMContentLoaded', function () {
         borradorActivado = true;
         cuboActivo = false;
         canvas.style.cursor = 'url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAP0lEQVQ4jWNgGHrg////p/wxMDAwMP8Fgf8uBL6ZTieJoxeBqZgIN8NCDhfwiFAABnA7lo0AIUwAAAABJRU5ErkJggg==), auto'; // Cursor de borrador
+        
     });
 
     // Botón de Cubo para rellenar
-    document.getElementById('cubo').addEventListener('click', function () {
+    /*document.getElementById('cubo').addEventListener('click', function () {
         color = document.getElementById('colorPicker').value;
         cuboActivo = true;
         canvas.style.cursor = 'crosshair';
-    });
+    });*/
 
     // Botón para borrar todo el lienzo
     document.getElementById('borrarTodo').addEventListener('click', function () {
         contexto.clearRect(0, 0, canvas.width, canvas.height);
+        pintarFondo();
         guardarEstado(); // Guardar el estado después de borrar todo
     });
 
