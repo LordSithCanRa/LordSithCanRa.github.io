@@ -1,0 +1,94 @@
+canvas {
+    border: 2px solid black;
+    touch-action: none;
+}
+.controls {
+    margin-top: 10px;
+}
+/* Botones de color por defecto */
+.colorPorDefecto{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.colorPorDefecto[data-color="#000000"]{
+    background-color: #000000;
+}
+.colorPorDefecto[data-color="#FF0000"]{
+    background-color: #FF0000;   
+}
+.colorPorDefecto[data-color="#FFFF00"]{
+    background-color: #FFFF00;   
+}
+.colorPorDefecto[data-color="#00FF00"]{
+    background-color: #00FF00;   
+}
+.colorPorDefecto[data-color="#0000FF"]{
+    background-color: #0000FF;   
+}
+.colorPorDefecto[data-color="#FFA500"]{
+    background-color: #FFA500;   
+}
+.colorPorDefecto[data-color="#800080"]{
+    background-color: #800080;   
+}
+.colorPorDefecto[data-color="#008080"]{
+    background-color: #008080;   
+}
+.colorPorDefecto[data-color="#FFC0CB"]{
+    background-color: #FFC0CB;   
+}
+.colorPorDefecto[data-color="#808080"]{
+    background-color: #808080;   
+}  
+
+.utils{
+    width: 50px;
+    height: 50px;
+    font-size: large;
+    font-weight: bolder;
+    background-color: #000000af;
+}
+.spancontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ajusta esto según tus necesidades */
+}
+
+.centered-span {
+    display: inline-block;
+    width: 50px; /* Ancho deseado */
+    height: 50px; /* Alto deseado */
+    text-align: center;
+    line-height: 50px; /* Ajusta esto para centrar verticalmente */
+    background-color: rgb(221, 207, 79); /* Solo para visualizar el span */
+    /*border: 2px solid black;*/
+    border-radius: 50%;
+    font-size: larger;
+    font-weight: bolder;
+    
+}
+input[type=range] {
+    width: 30vw;
+}
+input[type=color] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+input[type=color]::-webkit-color-swatch {
+border-radius: 10px;
+border: none;
+}
+input[type=color]::-moz-color-swatch {
+border-radius: 10px;
+border: none;
+}

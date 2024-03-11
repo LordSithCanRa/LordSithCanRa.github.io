@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function () {
     var canvas = document.getElementById('lienzo');
     var contexto = canvas.getContext('2d');
     var historial = [];
@@ -258,5 +258,41 @@ document.addEventListener('DOMContentLoaded', function () {
             (bigint >> 8) & 255,
             bigint & 255
         ];
+    }
+    // Obtenemos el elemento <p> donde queremos mostrar el contador
+    var tiempoElement = document.getElementById("tiempo");
+
+    // Definimos la duración del contador en segundos
+    var duracion = 60;//60;
+    actualizarContador();
+    // Función para actualizar el contador
+    function actualizarContador() {
+        // Mostramos el tiempo restante en el elemento <p>
+        tiempoElement.textContent = duracion;
+
+        // Reducimos el tiempo restante en 1 segundo
+        duracion--;
+
+        // Si el tiempo restante es mayor que 0, programamos la próxima actualización
+        if (duracion >= 0) {
+            setTimeout(actualizarContador, 1000); // Llamamos a la función después de 1 segundo
+        }else{
+            //TODO: EMITIR SONIDO
+
+            //FUNCIONAA
+            Swal.fire({
+                title: "¿QUE COJONES ES ESTO?",
+                imageUrl: canvas.toDataURL(),
+                imageAlt: 'Imagen Capturada con error',
+                showConfirmButton: false,
+                timer: 20000,
+                didClose: () => { // Redirigir al usuario a inicio.html cuando se cierre la alerta
+                    window.location.href = 'index.html';
+                }
+            });
+
+           
+        }
+        
     }
 });
