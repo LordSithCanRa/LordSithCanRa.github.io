@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reproducir audio desde un segundo específico</title>
+</head>
+<body>
+
+<!--<audio id="miAudio" src="../../tickingbuzzer-75859.mp3"></audio>-->
+<button onclick="reproducirSonido(8)">Reproducir Sonido desde el sedgundo 8</button>
+
+<script>
+function reproducirSonido(segundoInicio) {
+    var audio = document.createElement("audio")
+    audio.src = "../../tickingbuzzer-75859.mp3" //0:28 de audio
+    var tiempoInicioSegundos = convertirAMilisegundos(0, 0, segundoInicio);
+    audio.currentTime = tiempoInicioSegundos / 1000;
+    audio.play();
+}
+
+function convertirAMilisegundos(horas, minutos, segundos) {
+    return ((horas * 3600) + (minutos * 60) + segundos) * 1000;
+}
+</script>
+
+</body>
+</html>

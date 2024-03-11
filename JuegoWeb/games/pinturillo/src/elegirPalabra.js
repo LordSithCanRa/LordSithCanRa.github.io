@@ -65,9 +65,10 @@ const Palabras = {
 function elegirPalabraAleatoria() {
     const palabras = Palabras.palabrasParaPintar;
     const indiceAleatorio = Math.floor(Math.random() * palabras.length);
+    
     return palabras[indiceAleatorio];
   }
-  
+  //Inicializar
   const palabraAleatoria = elegirPalabraAleatoria();
   console.log("La palabra elegida es:", palabraAleatoria);
   document.getElementById("palabraParaPintar").innerHTML = palabraAleatoria
