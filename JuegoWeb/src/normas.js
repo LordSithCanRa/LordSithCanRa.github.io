@@ -64,7 +64,19 @@ var dueloMiradas = `
         </ul>
 </ul>
 `;
-
+var carrerita = `
+<ul>
+    <br>
+        <ul>
+            <li><b style="font-size:1.5rem;">~ APUESTAS ~</b>
+            <br><br>
+                <ul>
+                    <li>Apuestas tragos, hasta un <b>máximo de 5</b>, si ganas podrás repartir <b>el doble</b> de los tragos apostados.<br>(<b>Hay que pagar antes de empezar</b>) </li>
+                </ul>
+            </li>
+        </ul>
+</ul>
+`;
 
 function obtenerNormas(string){
     let html;
@@ -86,7 +98,10 @@ function obtenerNormas(string){
             break;
 
         case "dueloMiradas":
-            html = dueloMiradas
+            html = dueloMiradas;
+            break;
+        case "carrerita":
+            html = carrerita;
             break;
     }
     return html;

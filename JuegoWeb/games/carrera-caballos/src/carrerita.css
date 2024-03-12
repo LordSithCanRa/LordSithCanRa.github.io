@@ -1,0 +1,18 @@
+canvas {
+    border: 2px solid black;
+    touch-action: none;
+}
+.controls {
+    margin-top: 10px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: rgb(62, 92, 62);
+    color:whitesmoke;
+}
+
+table, th, td {
+    border: 1px solid black;
+    padding: 8px;
+}

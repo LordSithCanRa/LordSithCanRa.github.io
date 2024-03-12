@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabla Escalonada</title>
+<!-- Agrega el CDN de SweetAlert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script>
+function agregarNombre(categoria) {
+    Swal.fire({
+        title: "Agregar Nombres",
+        input: "textarea",
+        inputPlaceholder: "Ingrese nombres separados por comas",
+        showCancelButton: true,
+        inputValidator: (value) => {
+            if (!value) {
+                return "¡Debe ingresar al menos un nombre!";
+            }
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            var nombres = result.value.split(',').map(nombre => nombre.trim());
+            var tabla = document.getElementById("tablaNombres");
+            var celda = tabla.rows[1].cells[categoria];
+
+            if (celda.textContent.trim() !== "") {
+                celda.innerHTML += "<br>" + nombres.join("<br>");
+            } else {
+                celda.innerHTML = nombres.join("<br>");
+            }
+        }
+    });
+}
+</script>
+</head>
+<body>
+
+<table id="tablaNombres" border="1">
+    <thead>
+        <tr>
+            <th onclick="agregarNombre(0)">Oros</th>
+            <th onclick="agregarNombre(1)">Copas</th>
+            <th onclick="agregarNombre(2)">Bastos</th>
+            <th onclick="agregarNombre(3)">Espadas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

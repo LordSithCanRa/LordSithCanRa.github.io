@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canvas con Imagen</title>
+<style>
+    canvas {
+        border: 1px solid black;
+    }
+</style>
+</head>
+<body>
+<canvas id="lienzo" width="200" height="200"></canvas>
+
+<script>
+var canvas = document.getElementById('lienzo');
+var ctx = canvas.getContext('2d');
+
+var img = new Image();
+img.onload = function() {
+    var newWidth = 100; // Nuevo ancho de la imagen
+    var newHeight = 100; // Nueva altura de la imagen
+    ctx.drawImage(img, 0, 0, newWidth, newHeight); // Dibuja la imagen con el nuevo tamaño
+};
+img.src = '../games/juego-Borracho/cartas/cartasSplit/imageonline/1.png'; // Ruta de la imagen que quieres agregar
+
+</script>
+</body>
+</html>

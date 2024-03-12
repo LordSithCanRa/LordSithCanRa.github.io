@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>SHOTGAME ~~ INICIO</title>
+    <style>
+        
+    </style>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel='stylesheet' type='text/css' media='screen' href='../../background.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../body.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../../inicio2.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='src/carrerita.css'>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<script>
+    function agregarColumna() {
+        // Obtener la referencia a la tabla y el cuerpo de la tabla
+        var tabla = document.getElementById("tablaCartas");
+        var cuerpoTabla = tabla.getElementsByTagName("tbody")[0];
+        
+        // Crear una nueva celda en cada fila para la nueva columna
+        var filas = cuerpoTabla.getElementsByTagName("tr");
+        for (var i = 0; i < filas.length; i++) {
+            var nuevaCelda = filas[i].insertCell(-1);
+            nuevaCelda.textContent = "Nuevo Contenido";
+        }
+        
+        // Agregar el encabezado de la nueva columna en el encabezado de la tabla
+        var encabezadoTabla = tabla.getElementsByTagName("thead")[0];
+        var filaEncabezado = encabezadoTabla.getElementsByTagName("tr")[0];
+        var nuevaColumnaEncabezado = document.createElement("th");
+        nuevaColumnaEncabezado.textContent = "Nueva Columna";
+        filaEncabezado.appendChild(nuevaColumnaEncabezado);
+    }
+    </script>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>CARRERITA<br><span id="palabraParaPintar"></span></h1>
+            <canvas id="lienzo"></canvas>
+            <br>
+            <script>
+                function agregarNombre(categoria) {
+                    Swal.fire({
+                        title: "Agregar Nombres",
+                        input: "textarea",
+                        inputPlaceholder: "Ingrese nombres separados por comas",
+                        showCancelButton: true,
+                        inputValidator: (value) => {
+                            if (!value) {
+                                return "¡Debe ingresar al menos un nombre!";
+                            }
+                        }
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            var nombres = result.value.split(',').map(nombre => nombre.trim());
+                            var tabla = document.getElementById("tablaNombres");
+                            var celda = tabla.rows[1].cells[categoria];
+                
+                            if (celda.textContent.trim() !== "") {
+                                celda.innerHTML += "<br>" + nombres.join("<br>");
+                            } else {
+                                celda.innerHTML = nombres.join("<br>");
+                            }
+                        }
+                    });
+                }
+                </script>
+            <table id="tablaNombres" border="1">
+                <thead>
+                    <tr>
+                        <th onclick="agregarNombre(0)">Oros</th>
+                        <th onclick="agregarNombre(1)">Copas</th>
+                        <th onclick="agregarNombre(2)">Bastos</th>
+                        <th onclick="agregarNombre(3)">Espadas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="animateme">
+        <ul class="bg-bubbles">
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <script src="src/carrera.js"></script>
+</body>
+</html>
