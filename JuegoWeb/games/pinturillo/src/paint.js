@@ -278,7 +278,7 @@
             setTimeout(actualizarContador, 1000); // Llamamos a la función después de 1 segundo
         }else{
             //TODO: EMITIR SONIDO
-
+            reproducirSonido(8)
             //FUNCIONAA
             Swal.fire({
                 title: "¿QUE COJONES ES ESTO?",
@@ -294,5 +294,16 @@
            
         }
         
+    }
+    function reproducirSonido(segundoInicio) {
+        var audio = document.createElement("audio")
+        audio.src = "../../tickingbuzzer-75859.mp3" //0:28 de audio
+        var tiempoInicioSegundos = convertirAMilisegundos(0, 0, segundoInicio);
+        audio.currentTime = tiempoInicioSegundos / 1000;
+        audio.play();
+    }
+    
+    function convertirAMilisegundos(horas, minutos, segundos) {
+        return ((horas * 3600) + (minutos * 60) + segundos) * 1000;
     }
 });

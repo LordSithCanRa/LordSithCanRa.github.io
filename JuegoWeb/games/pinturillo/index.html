@@ -11,7 +11,7 @@
     <link rel='stylesheet' type='text/css' media='screen' href='../../inicio2.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='../../footer.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='src/pinturillo.css'>
-    
+    <link rel='stylesheet' type='text/css' media='screen' href='../../normas.css'>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
@@ -20,11 +20,11 @@
             <h1>PINTURILLO COCIO</h1>
             <br>
             <br>
-            <button onclick="window.location.href = 'pintando.html';" class="btn">PINTAR</button>
+            <button onclick="alertaPintar()" class="btn">PINTAR</button>
             <br>
             <br>
             <br>
-            <button onclick="window.location.href = 'adivinar.html';" class="btn">ESCRIBIR</button>
+            <button onclick="alertaEscribir()" class="btn">ESCRIBIR</button>
             <br>
             <br>
             <br>
@@ -49,5 +49,12 @@
           <li></li>
         </ul>
       </div>
+      <!--Script para las normas-->
+      <script src="../../src/normas.js"></script>
+      <div class="normas">
+        <button onclick="alertaNormas('pinturillo')"><i class="fa-solid fa-book-skull"></i></button>
+      </div>
+
+      <script src="src/alertas.js"></script>
 </body>
 </html>
