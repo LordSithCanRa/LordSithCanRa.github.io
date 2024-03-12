@@ -54,7 +54,7 @@ footer a {
 
 @media only screen and (max-width: 800px) {
   .container {
-    margin-bottom: 130vh; /* Ajusta el margen inferior para dispositivos móviles */
+    margin-bottom: 200vh; /* Ajusta el margen inferior para dispositivos móviles */
   }
   footer {
     display: flex;
