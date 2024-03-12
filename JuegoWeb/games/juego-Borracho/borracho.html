@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <meta name="viewport">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <style>
+        .custom-swal-container {
+      max-width: none !important;
+    }
+        .casillas{
+            display: none;
+        }
+        body {
+            display: flex; 
+            justify-content: center;
+            align-items: center; 
+            height: 100vh;
+            /*background-image: url("cartas/background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;*/
+            background-color: #71E4C2;
+            background-position: center;
+            
+        }
+        #canvas-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 100vh;
+        }
+
+        #myCanvas, #canvas1game {
+            position: absolute;
+            top: 25.5%;
+            left: 55%;
+            transform: translate(-48%, -53%);
+            /*border: 25px solid black;*/
+        }
+        .dados{
+            position: absolute;
+            top: 53vh;
+            left: 41vw;
+            width: 200px;
+            height: 200px;
+            font-size: 4rem;
+            text-align: center;
+            color:white;
+            font-weight: bolder;
+            border-radius: 100%;
+            background-color:#8A012B/* blue;
+            border: 0px;
+            /* background-image: url("cartas/botonDado.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; */
+        }
+        .moverCasilla{
+            position: absolute;
+            top: 63vh;
+            left: 65vw;
+            width: 200px;
+            height: 200px;
+            font-size: 4rem;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            border-radius: 100%;
+            background-color:#8A012B/* #23ec3ebd;
+            /* background-image: url("casillasBorrachos/botonCarta.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; */
+        
+        }
+        .cambiarCasilla{
+            position: absolute;
+            top: 63vh;
+            right: 65vw;
+            width: 200px;
+            height: 200px;
+            font-size: 4rem;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            border-radius: 100%;
+            background-color:#8A012B/* #ec3a23bd;
+            /* background-image: url("casillasBorrachos/cambio.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; */
+        }
+        .minijuego{
+            position: absolute;
+            top: 75vh;
+            left: 41vw;
+            width: 200px;
+            height: 200px;
+            font-size: 4rem;
+            text-align: center;
+            color: white;
+            font-weight: bolder;
+            border-radius: 100%;
+            background-color:#8A012B/* black;
+            border: 0px;
+            /* background-image: url("cartas/botonMini.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center; */
+            
+        }
+        .borrachoBoy{
+            top: 43.5vh;
+            left: 6vw;
+            position: absolute;
+            font-size: 70px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: #272A78;
+        }
+        /* button>i, i{
+            color: white;
+            position: relative;
+            top: 10px;
+            left: -10px;
+        } */
+        .result{
+            position: absolute;
+            top: 2%;
+            left: 48%;
+        }
+        /* .fondo{
+            background: linear-gradient(45deg, #d200c8, #7462ff, #803bb8, #d523cc);
+            background-size: 300% 300%;
+            animation: color 12s ease-in-out infinite;
+        } */
+        .swal2-popup {
+            font-size: 1.6rem !important;
+            font-family: Georgia, serif;
+        }
+        .swal2-html-container>img {
+            height: 320;
+            width: 210;
+        }
+        .lateral{
+            left: 77%;
+            top: 80%;
+            position: absolute;
+            text-decoration: none;
+            list-style: none;
+            font-size: 70px;
+            transform: rotate(60deg);
+        }
+        @keyframes color {
+            0%{
+                background-position: 0% 50%;
+            }
+            50%{
+                background-position: 100% 50%;
+            }
+            100%{
+                background-position: 0 50%;
+            }
+        }
+        /*@media (max-width: 767px) and (min-width: 320px) {
+             Estilos específicos para la versión móvil
+            .dados{
+            position: absolute;
+            top: 95%;
+            left: 48%;
+        }
+        .cambiarCasilla{
+            position: absolute;
+            top: 98%;
+            left: 48%;
+        }
+        } */
+        /* #canvas-container {
+            margin: 0 auto;
+        }
+
+        canvas {
+            border: 1px solid black;
+            
+            
+        } */
+
+    </style>
+    <meta charset="UTF-8">
+</head>
+<body class="fondo">
+
+    <img class="casillas" src="casillasBorrachos/basica.png" alt="" id="basica">
+    <img class="casillas" src="casillasBorrachos/cambio.png" alt="" id="cambio">
+    <img class="casillas" src="casillasBorrachos/dueloMiradas.png" alt="dueloMiradas" id="dueloMiradas">
+    <img class="casillas" src="casillasBorrachos/levantarMano.png" alt="levantarMano" id="levantarMano">
+    <img class="casillas" src="casillasBorrachos/piedraPapelTijera.png" alt="" id="piedraPapelTijera">
+    <img class="casillas" src="casillasBorrachos/ambulancia.png" alt="" id="ambulancia">
+    <img class="casillas" src="casillasBorrachos/2tragos.png" alt="" id="2tragos">
+    <img class="casillas" src="casillasBorrachos/3tragos.png" alt="" id="3tragos">
+    <img class="casillas" src="casillasBorrachos/pasa2.png" alt="" id="pasa2">
+    <img class="casillas" src="casillasBorrachos/pasa3.png" alt="" id="pasa3">
+    <img class="casillas" src="casillasBorrachos/caracru.png" alt="" id="caracru">
+    <img class="casillas" src="casillasBorrachos/cascada.png" alt="" id="cascada">
+    <img class="casillas" src="casillasBorrachos/dadoIgualTrago.png" alt="" id="dadoIgualTrago">
+    <img class="casillas" src="casillasBorrachos/mayordomo.png" alt="" id="mayordomo">
+    <img class="casillas" src="casillasBorrachos/cambioReto.png" alt=""  id="cambioReto">
+    <img class="casillas" src="casillasBorrachos/borrachoGanador.png" alt=""  id="borrachoGanador">
+    <img class="casillas" src="casillasBorrachos/cupido.png" alt=""  id="cupido">
+    <img class="casillas" src="casillasBorrachos/darkCupido.png" alt=""  id="darkCupido">
+    <img class="casillas" src="casillasBorrachos/minijuego.png" alt=""  id="minijuego">
+    <!-- <img src="casillasTipos/1vs1.png" alt=""> -->
+    <div id="canvas-container">
+        <canvas id="myCanvas" width="900" height="900"></canvas>
+        <canvas id="canvas1game" width="900" height="900"></canvas>
+    </div>
+    <!-- <script src="js/juego.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.js"></script>
+    <!-- <script src="sweet/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweet/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweet/sweetalert2.min.css"> -->
+
+
+    <script src="js/mapaBorracho.js"></script>
+    <script src="js/juegoBorracho.js"></script>
+    
+    <button style="display: none;" id="miBoton" onclick="tirarDados()">Ejecutar</button>
+    
+    <button id = "dados" class="dados" onclick="tirarDados_()"><i class="fa fa-solid fa-dice"></i></button>
+    <button id = "cartaboton" class="moverCasilla" onclick="sacarCarta()"><i class="fa fa-credit-card"></i></button>
+    
+    <button id = "cambiarCasilla" class="cambiarCasilla" onclick="cambiarCasilla()"><i class="fa fa-solid fa-rotate"></i></button>
+    <button id = "mini" class="minijuego" onclick="elegirMinijuego()"><i class="fa fa-gamepad"></i></button>
+    <p class="borrachoBoy"><b>BORRACHO BOY</b></p>
+    <!-- <ul class="lateral">
+        <li>___</li>
+        <li>___</li>
+        <li>___</li>
+        <li>___</li>
+        <li>___</li>
+    </ul> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+</body>
+</html>
