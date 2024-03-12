@@ -30,27 +30,39 @@ var pinturillo = `
 `;
 
 var quePrefieres = `
-You can use <b>bold text</b>,
-<a href="#">links</a>,
-and other HTML tags
+<ul>
+    <br>
+        <ul>
+            <li><b style="font-size:1.5rem;">~ LA MAYORIA BEBE ~</b></li>
+        </ul>
+</ul>
 `;
 
 var yoNunca = `
-You can use <b>bold text</b>,
-<a href="#">links</a>,
-and other HTML tags
+<ul>
+    <br>
+        <ul>
+            <li><b style="font-size:1.5rem;">~ BEBE EL QUE LO HA HECHO ~</b></li>
+        </ul>
+</ul>
 `;
 
 var masProbable = `
-You can use <b>bold text</b>,
-<a href="#">links</a>,
-and other HTML tags
+<ul>
+    <br>
+        <ul>
+            <li><b style="font-size:1.5rem;">~ EL QUE ES MAS PROBABLE BEBE ~</b></li>
+        </ul>
+</ul>
 `;
 
 var dueloMiradas = `
-You can use <b>bold text</b>,
-<a href="#">links</a>,
-and other HTML tags
+<ul>
+    <br>
+        <ul>
+            <li><b style="font-size:1.5rem;">~ BEBEN 2 LOS QUE SE MIREN CADA (CADA RONDA +2) ~</b></li>
+        </ul>
+</ul>
 `;
 
 
