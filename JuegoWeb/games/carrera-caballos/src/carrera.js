@@ -157,19 +157,61 @@ document.addEventListener('DOMContentLoaded', function () {
             var objetoAleatorio = objetos[Math.floor(Math.random() * objetos.length)];
             objetoAleatorio.mover(velocidad - 11, 0);
             objetoAleatorio.numRep++;
-
+            //console.log(document.getElementById(objetoAleatorio.constructor.name))
+            //console.log(document.getElementById(objetoAleatorio.constructor.name).textContent)
             if (objetoAleatorio.numRep === 9) {
                 objetoAleatorio.mover(velocidad-11,0)
                 clearInterval(intervalo); // Detenemos el intervalo si un objeto alcanza 9 repeticiones
-                alert("¡" + objetoAleatorio.constructor.name + " ha llegado a 9 repeticiones!");
+                let bebedores = "Nadie";
+
+                switch (objetoAleatorio.constructor.name) {
+                    case "Bastos":
+                        bebedores = obtenerBebedoresJSON("Bastos")
+                        break;
+                
+                    case "Oro":
+                        bebedores = obtenerBebedoresJSON("Oros")
+                        break;
+                    case "Copas":
+                        bebedores = obtenerBebedoresJSON("Copas")
+                        break;
+                    case "Espadas":
+                        bebedores = obtenerBebedoresJSON("Espadas")
+                        break;
+                }
+                console.log(bebedores)//[["aa","33"],["aa","33"]]
+                alert("¡" + objetoAleatorio.constructor.name + " ha llegado a 9 repeticiones!" + "Beben" + bebedores);
                 contexto.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el canvas
                 dibujarBotonEmpezar()
             }
         }
 
         // Configuramos el intervalo para mover aleatoriamente los objetos cada segundo
-        var intervalo = setInterval(moverAleatoriamente, 1000);
+        var intervalo = setInterval(moverAleatoriamente, 500)//1000);
         
+    }
+
+    function obtenerBebedoresJSON(palo){
+        // Obtenemos el elemento <td> por su ID
+        var tdElement = document.getElementById(palo);
+
+        // Obtenemos el contenido del elemento <td>
+        var contenido = tdElement.innerHTML;
+
+        // Separamos el contenido por la etiqueta de salto de línea (<br>)
+        var lineas = contenido.split("<br>");
+        
+        // Creamos un objeto JSON para almacenar los valores
+        var valores = [];
+
+        // Iteramos sobre las líneas y obtenemos el nombre y el número
+        lineas.forEach(function(linea) {
+        var partes = linea.split("-");
+        valores.push(partes);
+        });
+
+        // Imprimimos el objeto JSON resultante
+        return valores;
     }
 });
 
