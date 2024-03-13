@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Configuramos el intervalo para mover aleatoriamente los objetos cada segundo
-        var intervalo = setInterval(moverAleatoriamente, 500)//1000);
+        var intervalo = setInterval(moverAleatoriamente, 1000);
         
     }
 
