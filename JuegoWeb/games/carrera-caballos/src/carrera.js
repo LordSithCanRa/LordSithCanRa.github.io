@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.height = 100;
             this.numRep=0;
             this.img = new Image();
-            this.img.src = '../../games/juego-Borracho/cartas/cartasSplit/imageonline/1.png'; // Ruta de la imagen que quieres agregar
+            this.img.src = 'src/cartasSplit/imageonline/1.png'; // Ruta de la imagen que quieres agregar
             this.img.onload = () => {
                 this.dibujar(contexto);
             };
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.height = 100;
             this.numRep=0;
             this.img = new Image();
-            this.img.src = '../../games/juego-Borracho/cartas/cartasSplit/imageonline/3.png'; // Ruta de la imagen que quieres agregar
+            this.img.src = 'src/cartasSplit/imageonline/3.png'; // Ruta de la imagen que quieres agregar
             this.img.onload = () => {
                 this.dibujar(contexto);
             };
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.height = 100;
             this.numRep=0;
             this.img = new Image();
-            this.img.src = '../../games/juego-Borracho/cartas/cartasSplit/imageonline/2.png'; // Ruta de la imagen que quieres agregar
+            this.img.src = 'src/cartasSplit/imageonline/2.png'; // Ruta de la imagen que quieres agregar
             this.img.onload = () => {
                 this.dibujar(contexto);
             };
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.height = 100;
             this.numRep=0;
             this.img = new Image();
-            this.img.src = '../../games/juego-Borracho/cartas/cartasSplit/imageonline/4.png'; // Ruta de la imagen que quieres agregar
+            this.img.src = 'src/cartasSplit/imageonline/4.png'; // Ruta de la imagen que quieres agregar
             this.img.onload = () => {
                 this.dibujar(contexto);
             };
@@ -153,8 +153,69 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Función para mover los objetos aleatoriamente
         function moverAleatoriamente() {
+            
             var objetos = [oro, copas, bastos, espadas];
             var objetoAleatorio = objetos[Math.floor(Math.random() * objetos.length)];
+
+            let num = generarNumeroAleatorio()+""
+            switch (num) {
+                case "5":
+                case "9":
+                case "13":
+                case "17":
+                case "22":
+                case "26":
+                case "30":
+                case "34":
+                case "38":
+                case "41":
+                case "45":
+                    objetoAleatorio = oro
+                    oro.img.src = "src/cartasSplit/imageonline/"+num+".png"
+                    break;
+                case "6":
+                case "10":
+                case "16":
+                case "21":
+                case "25":
+                case "29":
+                case "33":
+                case "37":
+                case "40":
+                case "44":
+                case "48":
+                    objetoAleatorio = bastos
+                    bastos.img.src = "src/cartasSplit/imageonline/"+num+".png"
+                    break;
+                case "7":
+                case "11":
+                case "14":
+                case "18":
+                case "19":
+                case "23":
+                case "27":
+                case "31":
+                case "35":
+                case "42":
+                case "46":
+                    objetoAleatorio = copas
+                    copas.img.src = "src/cartasSplit/imageonline/"+num+".png"
+                    break;
+                case "8":
+                case "12":
+                case "15":
+                case "20":
+                case "24":
+                case "28":
+                case "32":
+                case "36":
+                case "39":
+                case "43":
+                case "47":
+                    objetoAleatorio = espadas
+                    espadas.img.src = "src/cartasSplit/imageonline/"+num+".png"
+                    break;
+            }
             objetoAleatorio.mover(velocidad - 11, 0);
             objetoAleatorio.numRep++;
             //console.log(document.getElementById(objetoAleatorio.constructor.name))
@@ -163,24 +224,48 @@ document.addEventListener('DOMContentLoaded', function () {
                 objetoAleatorio.mover(velocidad-11,0)
                 clearInterval(intervalo); // Detenemos el intervalo si un objeto alcanza 9 repeticiones
                 let bebedores = "Nadie";
-
+                let imgUrl;
                 switch (objetoAleatorio.constructor.name) {
                     case "Bastos":
                         bebedores = obtenerBebedoresJSON("Bastos")
+                        imgUrl = "src/cartasSplit/imageonline/2.png"
                         break;
                 
                     case "Oro":
                         bebedores = obtenerBebedoresJSON("Oros")
+                        imgUrl = "src/cartasSplit/imageonline/1.png"
                         break;
                     case "Copas":
                         bebedores = obtenerBebedoresJSON("Copas")
+                        imgUrl = "src/cartasSplit/imageonline/3.png"
                         break;
                     case "Espadas":
                         bebedores = obtenerBebedoresJSON("Espadas")
+                        imgUrl = "src/cartasSplit/imageonline/4.png"
                         break;
                 }
                 console.log(bebedores)//[["aa","33"],["aa","33"]]
-                alert("¡" + objetoAleatorio.constructor.name + " ha llegado a 9 repeticiones!" + "Beben" + bebedores);
+                htmlString = ""
+                bebedores.forEach(function(bebedor) {
+                    htmlString += "<b>" + bebedor[0] + "</b> reparte " + parseInt(bebedor[1])*2 + " tragos<br>";
+                });
+                Swal.fire({
+                    title: "<strong>REPARTEN TRAGOS "+objetoAleatorio.constructor.name.toUpperCase()+"</strong>",
+                    imageUrl: imgUrl,
+                    imageHeight: 400,
+                    imageAlt: "A tall image",
+                    html: htmlString,
+                    showCloseButton: false,
+                    showCancelButton: true,
+                    showConfirmButton: false,
+                    cancelButtonText: `
+                        Repartidos  <i class="fa-solid fa-book-skull"></i>
+                    `
+                });
+                //TODO MONTAR ALERTA
+                //alert("¡" + objetoAleatorio.constructor.name + " ha llegado a 9 repeticiones!" + "Reparten" + bebedores);
+                
+                
                 contexto.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el canvas
                 dibujarBotonEmpezar()
             }
@@ -190,7 +275,31 @@ document.addEventListener('DOMContentLoaded', function () {
         var intervalo = setInterval(moverAleatoriamente, 1000);
         
     }
+    // Variable para almacenar los números generados
+    var numerosGenerados = [];
 
+    // Función para generar un número aleatorio único dentro del rango especificado
+    function generarNumeroAleatorio() {
+        var min = 5;
+        var max = 48;
+        var rango = max - min + 1;
+
+        // Verificar si se han generado todos los números posibles
+        if (numerosGenerados.length === rango) {
+            alert("Se han agotado todos los números posibles.");
+            return null; // Retorna null cuando se han agotado los números
+        }
+
+        var numeroAleatorio;
+        do {
+            numeroAleatorio = Math.floor(Math.random() * rango) + min;
+        } while (numerosGenerados.includes(numeroAleatorio));
+
+        // Agregar el número generado al arreglo de números generados
+        numerosGenerados.push(numeroAleatorio);
+
+        return numeroAleatorio;
+    }
     function obtenerBebedoresJSON(palo){
         // Obtenemos el elemento <td> por su ID
         var tdElement = document.getElementById(palo);
