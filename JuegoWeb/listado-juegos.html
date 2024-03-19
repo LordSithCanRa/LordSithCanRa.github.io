@@ -10,23 +10,46 @@
     <link rel='stylesheet' type='text/css' media='screen' href='listado.css'>
 </head>
 <body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+          title: "Agregar apuesta",
+          input: "text",
+          inputPlaceholder: "Nombre-Tragos",
+          showCancelButton: true,
+          inputValidator: (value) => {
+              if (!value) {
+                  return "Ya vas to cocio? Ingresa un nombre y una apuesta!";
+              }
+          }
+        }).then((result) => {
+          if (result.isConfirmed) {
+              var nombres = result.value.split(',').map(nombre => nombre.trim());
+              var tabla = document.getElementById("tablaNombres");
+              var celda = tabla.rows[1].cells[categoria];
+
+              if (celda.textContent.trim() !== "") {
+                  celda.innerHTML += "<br>" + nombres.join("<br>") ;
+              } else {
+                  celda.innerHTML = nombres.join("<br>");
+              }
+          }
+        });
+    });
+  </script>
     <div class="container">
-      <a href="games/que-prefiere/index.html" class="image-link">
-      <div class="image">
-        <img src="src/iconGames/queprefieres.jfif" alt="Imagen 1">
-        <p>¿Que prefieres?</p>
-      </div>
-      </a><a href="games/yo-nunca/index.html" class="image-link">
-      <div class="image">
-        <img src="src/iconGames/yonunca.jfif" alt="Imagen 2">
-        <p>yo nunca</p>
-      </div>
-      </a><a href="games/mas-probable/index.html" class="image-link">
-      <div class="image">
-        <img src="src/iconGames/probabilidad.jfif" alt="Imagen 3">
-        <p>Quien es el mas probable</p>
-      </div>
-      </a><a href="games/duelo-miradas/index.html" class="image-link">
+      <a href="games/verdadero-falso/index.html" class="image-link">
+        <div class="image">
+          <img src="src/iconGames/verdaderoFalso.jfif" alt="Imagen 1">
+          <p>Verdadero o Falso</p>
+        </div>
+        </a><a href="games/yo-nunca/index.html" class="image-link">
+        <div class="image">
+          <img src="src/iconGames/mayorMenor.jfif" alt="Imagen 2">
+          <p>Mayor o Menor</p>
+        </div>
+        </a>
+      <a href="games/duelo-miradas/index.html" class="image-link">
       <div class="image">
         <img src="src/iconGames/dueloMiradas2.jfif" alt="Imagen 4">
         <p>DUELO DE MIRADAS</p>
@@ -66,7 +89,22 @@
           <img src="src/iconGames/piramide.jfif" alt="Imagen 6">
           <p>Piramide</p>
         </div>
-      </a>
+      </a><a href="games/que-prefiere/index.html" class="image-link">
+        <div class="image">
+          <img src="src/iconGames/queprefieres.jfif" alt="Imagen 1">
+          <p>¿Que prefieres?</p>
+        </div>
+        </a><a href="games/yo-nunca/index.html" class="image-link">
+        <div class="image">
+          <img src="src/iconGames/yonunca.jfif" alt="Imagen 2">
+          <p>yo nunca</p>
+        </div>
+        </a><a href="games/mas-probable/index.html" class="image-link">
+        <div class="image">
+          <img src="src/iconGames/probabilidad.jfif" alt="Imagen 3">
+          <p>Quien es el mas probable</p>
+        </div>
+        </a>
       <!--<a href="inicio.html" class="image-link">
       <div class="image">
         <img src="src/img.jpg" alt="Imagen 6">

@@ -77,7 +77,32 @@ var carrerita = `
         </ul>
 </ul>
 `;
-
+var verdaderoVSfalso = `<ul>
+<br>
+    <ul>
+        EN UN MOVIL
+    </ul>
+    <ul>
+        CREAR LISTADO DE PALABRAS
+    </ul>
+    <ul>
+        Cada jugador ira en su turno y vera una palabra, nombre o frase de lo que tendra que contar, tirará un dado si sale <b>PAR</b> tendra que contar una historia de <b>verdad</b>
+        si sale <b>IMPAR</b> tendra que contar una historia de <b>mentira</b>
+    </ul>
+    <br><br>
+    <ul>
+        Por cada uno que acierte el que haya contado la historia bebera un trago por cada voto, mientras los que no acertaron si la historia es verdad o mentiran beberan 2 tragos
+    </ul>
+</ul>`;
+var mayorOmenor = `<ul>
+<br>
+    <ul>
+        EN UN MOVIL
+    </ul>
+    <ul>
+        En sentido de las agujas del reloj, se pondra una primera carta y el siguiente dice si es mayor o menor, si no acierta bebe un trago hasta que acierte
+    </ul>
+</ul>`;
 function obtenerNormas(string){
     let html;
     switch (string) {
@@ -102,6 +127,12 @@ function obtenerNormas(string){
             break;
         case "carrerita":
             html = carrerita;
+            break;
+        case "verdaderoVSfalso":
+            html = verdaderoVSfalso;
+            break;
+        case "mayorOmenor":
+            html = mayorOmenor;
             break;
     }
     return html;
