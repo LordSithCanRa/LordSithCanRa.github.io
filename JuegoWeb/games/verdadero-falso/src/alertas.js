@@ -18,34 +18,6 @@ function alertaPalabras(){
     if (result.isConfirmed) {
       palabras.push(result.value)
       alertaPalabras()
-    }else if(result.isDismissed){
-      
-      Swal.fire({
-        title: "¿Seguro de que quieres salir?",
-        text: "Dejaras de añadir palabras",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Seguir añadiendo",
-        cancelButtonText: "Terminar",
-        reverseButtons: true
-      }).then((result) => {
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire({
-            title: "Proceso terminado!",
-            text: "La insercion de palabras se ha terminado.",
-            icon: "info"
-          });
-        } else if (
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire({
-            title: "Operacion cancelada.",
-            text: "Puedes seguir añadiendo palabras :)",
-            icon: "info"
-          });
-        }
-      });
     }
   });
 }
@@ -54,8 +26,8 @@ function obtenerPalabraAleatoria() {
   // Verifica si todas las palabras ya han sido usadas
   if (palabras.length <= 0) {
     Swal.fire({
-      title: "Se agotaron las palabras",
-      text: "That thing is still around?",
+      title: "Me quede sin palabras...",
+      text: "Agrega nuevas palabras para seguir bebiendo!",
       icon: "warning"
     });
     return null;

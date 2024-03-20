@@ -80,24 +80,23 @@ var carrerita = `
 var verdaderoVSfalso = `<ul>
 <br>
     <ul>
-        EN UN MOVIL
+    Este juego esta hecho para ejecutarse en un unico dispositivo, <b>el que tenga más bateria</b> tendrá que poner el movil para jugar.
     </ul>
+    <br><br>
     <ul>
-        CREAR LISTADO DE PALABRAS
-    </ul>
-    <ul>
-        Cada jugador ira en su turno y vera una palabra, nombre o frase de lo que tendra que contar, tirará un dado si sale <b>PAR</b> tendra que contar una historia de <b>verdad</b>
+        Tendréis que <b>agregar palabras</b> antes de jugar a este juego luego con esa palabra
+        cada jugador ira en su turno y vera una palabra, nombre o frase de lo que tendra que contar, tirará un dado si sale <b>PAR</b> tendra que contar una historia de <b>verdad</b>
         si sale <b>IMPAR</b> tendra que contar una historia de <b>mentira</b>
     </ul>
     <br><br>
     <ul>
-        Por cada uno que acierte el que haya contado la historia bebera un trago por cada voto, mientras los que no acertaron si la historia es verdad o mentiran beberan 2 tragos
+        El que haya contado la historia bebera <b>un trago por cada voto acertado</b>, mientras los que no acertaron si la historia es verdad o mentiran beberan <b>2 tragos</b>
     </ul>
 </ul>`;
 var mayorOmenor = `<ul>
 <br>
     <ul>
-        EN UN MOVIL
+        Este juego esta hecho para ejecutarse en un unico dispositivo, <b>el que tenga más bateria</b> tendrá que poner el movil para jugar.
     </ul>
     <ul>
         En sentido de las agujas del reloj, se pondra una primera carta y el siguiente dice si es mayor o menor, si no acierta bebe un trago hasta que acierte
@@ -140,7 +139,7 @@ function obtenerNormas(string){
 
 function alertaNormas(string){
     Swal.fire({
-        title: "<strong>NORMAS</strong>",
+        title: `<i class="fa-solid fa-book-skull"></i><strong>  NORMAS  </strong><i class="fa-solid fa-book-skull"></i>`,
         icon: "fa-solid fa-book-skull",
         html: obtenerNormas(string),
         showCloseButton: false,
@@ -148,7 +147,7 @@ function alertaNormas(string){
         showConfirmButton: false,
         confirmButtonAriaLabel: "Thumbs up, great!",
         cancelButtonText: `
-            Acepto  <i class="fa-solid fa-book-skull"></i>
+            Acepto
         `,
         cancelButtonAriaLabel: "Thumbs down"
         });
