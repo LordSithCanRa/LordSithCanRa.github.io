@@ -10,9 +10,9 @@ const canvas = document.getElementById("myCanvas");
     var count = 1;
 
     const fondoBorde = "#000000"
-    const fondoCasillas = "#615856"
-    const fondoCasilla2 = "#CF9191"
-    const colorLetras = "white"
+    const fondoCasillas = "#98DE3B"
+    const fondoCasilla2 = "#98DE3B"
+    const colorLetras = "black"
     //IMAGENES 32x32
 
     //VALDOSAS

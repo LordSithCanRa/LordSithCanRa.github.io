@@ -12,7 +12,7 @@ canvas.height = 800;
     var count = 1;
 
     const fondoBorde = "#000000"
-    const fondoCasillas = "#ceeda5"
+    const fondoCasillas = "#98DE3B"//"#ceeda5"
 
     //IMAGENES 32x32
 
