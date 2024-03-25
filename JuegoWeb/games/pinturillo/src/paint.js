@@ -1,4 +1,5 @@
-    document.addEventListener('DOMContentLoaded', function () {
+
+   document.addEventListener('DOMContentLoaded', function () {
     var canvas = document.getElementById('lienzo');
     var contexto = canvas.getContext('2d');
     var historial = [];
@@ -148,6 +149,7 @@
         avanzar();
     });
 
+
     // Obtener todos los elementos con la clase .colorPorDefecto
     var botones = document.querySelectorAll('.colorPorDefecto');
 
@@ -261,10 +263,17 @@
     }
     // Obtenemos el elemento <p> donde queremos mostrar el contador
     var tiempoElement = document.getElementById("tiempo");
-
+    
     // Definimos la duración del contador en segundos
     var duracion = 60;//60;
     actualizarContador();
+    
+    //Botton de terminar el tiempo    
+    document.getElementById('terminar').addEventListener('click', function () {
+        duracion = 0
+        actualizarContador()
+    });
+    
     // Función para actualizar el contador
     function actualizarContador() {
         // Mostramos el tiempo restante en el elemento <p>
@@ -280,7 +289,31 @@
             //TODO: EMITIR SONIDO
             reproducirSonido(8)
             //FUNCIONAA
+            let timerInterval;
             Swal.fire({
+            title: "¿QUE COJONES ES ESTO?",
+            html: "La ventana se cerrará en <b></b> milisegundos.",
+            imageUrl: canvas.toDataURL(),
+            imageAlt: 'Imagen Capturada con error',
+            timer: 20000,
+            timerProgressBar: true,
+            didOpen: () => {
+                Swal.showLoading();
+                const timer = Swal.getPopup().querySelector("b");
+                timerInterval = setInterval(() => {
+                timer.textContent = `${Swal.getTimerLeft()}`;
+                }, 100);
+            },
+            willClose: () => {
+                clearInterval(timerInterval);
+            }
+            }).then((result) => {
+            /* Read more about handling dismissals below */
+            if (result.dismiss === Swal.DismissReason.timer) {
+                window.location.href = 'index.html';
+            }
+            });
+            /*Swal.fire({
                 title: "¿QUE COJONES ES ESTO?",
                 imageUrl: canvas.toDataURL(),
                 imageAlt: 'Imagen Capturada con error',
@@ -289,7 +322,7 @@
                 didClose: () => { // Redirigir al usuario a inicio.html cuando se cierre la alerta
                     window.location.href = 'index.html';
                 }
-            });
+            });*/
 
            
         }

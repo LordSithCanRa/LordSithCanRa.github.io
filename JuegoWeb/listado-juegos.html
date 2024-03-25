@@ -4,57 +4,33 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>SHOTGAME ~~ INICIO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='background.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='body.css'>
     <link rel='stylesheet' type='text/css' media='screen' href='listado.css'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 </head>
 <body>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        Swal.fire({
-          title: "Agregar apuesta",
-          input: "text",
-          inputPlaceholder: "Nombre-Tragos",
-          showCancelButton: true,
-          inputValidator: (value) => {
-              if (!value) {
-                  return "Ya vas to cocio? Ingresa un nombre y una apuesta!";
-              }
-          }
-        }).then((result) => {
-          if (result.isConfirmed) {
-              var nombres = result.value.split(',').map(nombre => nombre.trim());
-              var tabla = document.getElementById("tablaNombres");
-              var celda = tabla.rows[1].cells[categoria];
-
-              if (celda.textContent.trim() !== "") {
-                  celda.innerHTML += "<br>" + nombres.join("<br>") ;
-              } else {
-                  celda.innerHTML = nombres.join("<br>");
-              }
-          }
-        });
-    });
-  </script>
     <div class="container">
       <a href="games/verdadero-falso/index.html" class="image-link">
         <div class="image">
           <img src="src/iconGames/verdaderoFalso.jfif" alt="Imagen 1">
           <p>Verdadero o Falso</p>
         </div>
-        </a><a href="games/yo-nunca/index.html" class="image-link">
+        </a><a href="games/mayor-menor/index.html" class="image-link">
         <div class="image">
           <img src="src/iconGames/mayorMenor.jfif" alt="Imagen 2">
           <p>Mayor o Menor</p>
         </div>
         </a>
-      <a href="games/duelo-miradas/index.html" class="image-link">
+      <!--<a href="games/duelo-miradas/index.html" class="image-link">
       <div class="image">
         <img src="src/iconGames/dueloMiradas2.jfif" alt="Imagen 4">
         <p>DUELO DE MIRADAS</p>
       </div>
-      </a><a href="games/pinturillo/index.html" class="image-link">
+      </a>--><a href="games/pinturillo/index.html" class="image-link">
       <div class="image">
         <img src="src/iconGames/pinturillo.jfif" alt="Imagen 5">
         <p>Pinturillo cocio</p>
@@ -72,7 +48,7 @@
           <p>Carrera de caballos</p>
         </div>
       </a>
-      <a href="index.html" class="image-link">
+      <a href="games/cascada/index.html" class="image-link">
         <div class="image">
           <img src="src/iconGames/cascada.jfif" alt="Imagen 6">
           <p>Cascada</p>

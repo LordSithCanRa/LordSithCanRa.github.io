@@ -1,6 +1,11 @@
 var pinturillo = `
 <ul>
     <br>
+    <ul>
+      Este juego esta hecho para jugar en varios dispositivos, en cada turno uno sera el pintor y los otros tendran que adivinar la obra de arte que ha realizado el pintor.
+      El pintor cambiara hacia la izquierda del primero que se atreva a pintar.
+    </ul>
+    <br>
         <ul>
             <li><b style="font-size:1.5rem;">El que pinta:</b>
             <br><br>
@@ -46,7 +51,44 @@ var yoNunca = `
         </ul>
 </ul>
 `;
-
+var cascada = `
+<ul>
+    <br>
+    <ul>
+     Este juego esta hecho para ejecutarse en un unico dispositivo, <b>el que tenga más bateria</b> tendrá que poner el movil para jugar.
+    </ul><br>
+        <ul>
+            <li><b style="font-size:1.5rem;">~ BEBE SEGUN EL SIGNIFICADO DE CADA CARTA ~</b></li>
+            <ul>
+                <br>
+                <br>
+                <li>1. CASCADA (Hasta que el de tu izquierda no pare de beber no podras parar)</li>
+                <br>
+                <li>2. Bebes</li>
+                <br>
+                <li>3. Beben los chicos</li>
+                <br>
+                <li>4. Beben las chicas</li>
+                <br>
+                <li>5. Envia 2 tragos</li>
+                <br>
+                <li>6. Mayordomo (Si a algun jugador le falta bebida tu se la tendras que rellenar durante una vuelta)</li>
+                <br>
+                <li>7. El ultimo que levante la mano bebe 2 tragos</li>
+                <br>
+                <li>8. Tematica (Se dice una tematica y quien falle o repita palabra bebe 2)</li>
+                <br>
+                <li>9. Un misisipi (Bebes hasta que tus compañeros terminen de decir la frase "Un misisipi")</li>
+                <br>
+                <li>10. Duelo de miradas (Todos con las cabezas agachadas, a la cuenta de 3 mirais a alguien, si coincidis y os mirais bebeis tantos tragos como en la ronda que os vayais)</li>
+                <br>
+                <li>11. Todos beben</li>
+                <br>
+                <li>12. Regla (Alguien pondra una regla, esta se tiene que cumplir durante todo el juego, si no lo cumples bebes )</li>
+            </ul>
+        </ul>
+</ul>
+`;
 var masProbable = `
 <ul>
     <br>
@@ -80,7 +122,7 @@ var carrerita = `
 var verdaderoVSfalso = `<ul>
 <br>
     <ul>
-    Este juego esta hecho para ejecutarse en un unico dispositivo, <b>el que tenga más bateria</b> tendrá que poner el movil para jugar.
+     Este juego esta hecho para ejecutarse en un unico dispositivo, <b>el que tenga más bateria</b> tendrá que poner el movil para jugar.
     </ul>
     <br><br>
     <ul>
@@ -98,10 +140,12 @@ var mayorOmenor = `<ul>
     <ul>
         Este juego esta hecho para ejecutarse en un unico dispositivo, <b>el que tenga más bateria</b> tendrá que poner el movil para jugar.
     </ul>
+    <br>
     <ul>
-        En sentido de las agujas del reloj, se pondra una primera carta y el siguiente dice si es mayor o menor, si no acierta bebe un trago hasta que acierte
+        En sentido de las agujas del reloj, se pondra una primera carta y el siguiente dice si es mayor o menor, si no acierta bebe un trago y repite hasta que acierte
     </ul>
 </ul>`;
+
 function obtenerNormas(string){
     let html;
     switch (string) {
@@ -133,6 +177,9 @@ function obtenerNormas(string){
         case "mayorOmenor":
             html = mayorOmenor;
             break;
+        case "cascada":
+            html = cascada;
+            break;
     }
     return html;
 }
@@ -140,7 +187,6 @@ function obtenerNormas(string){
 function alertaNormas(string){
     Swal.fire({
         title: `<i class="fa-solid fa-book-skull"></i><strong>  NORMAS  </strong><i class="fa-solid fa-book-skull"></i>`,
-        icon: "fa-solid fa-book-skull",
         html: obtenerNormas(string),
         showCloseButton: false,
         showCancelButton: true,

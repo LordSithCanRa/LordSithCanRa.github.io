@@ -35,6 +35,10 @@ function actualizarContador() {
     }
     
 }
+function finalizarTiempo(){
+    duracion = 0
+    actualizarContador()
+}
 function getImageDataURL() {
     // Obtener el valor del campo de texto con el id "palabra"
     var palabra = document.getElementById("palabra").value;

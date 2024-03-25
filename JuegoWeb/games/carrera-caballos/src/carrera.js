@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.height = 100;
             this.numRep=0;
             this.img = new Image();
-            this.img.src = 'src/cartasSplit/imageonline/1.png'; // Ruta de la imagen que quieres agregar
+            this.img.src = '../../src/cartasImage/1.png'; // Ruta de la imagen que quieres agregar
             this.img.onload = () => {
                 this.dibujar(contexto);
             };
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.height = 100;
             this.numRep=0;
             this.img = new Image();
-            this.img.src = 'src/cartasSplit/imageonline/3.png'; // Ruta de la imagen que quieres agregar
+            this.img.src = '../../src/cartasImage/3.png'; // Ruta de la imagen que quieres agregar
             this.img.onload = () => {
                 this.dibujar(contexto);
             };
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.height = 100;
             this.numRep=0;
             this.img = new Image();
-            this.img.src = 'src/cartasSplit/imageonline/2.png'; // Ruta de la imagen que quieres agregar
+            this.img.src = '../../src/cartasImage/2.png'; // Ruta de la imagen que quieres agregar
             this.img.onload = () => {
                 this.dibujar(contexto);
             };
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.height = 100;
             this.numRep=0;
             this.img = new Image();
-            this.img.src = 'src/cartasSplit/imageonline/4.png'; // Ruta de la imagen que quieres agregar
+            this.img.src = '../../src/cartasImage/4.png'; // Ruta de la imagen que quieres agregar
             this.img.onload = () => {
                 this.dibujar(contexto);
             };
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 case "41":
                 case "45":
                     objetoAleatorio = oro
-                    oro.img.src = "src/cartasSplit/imageonline/"+num+".png"
+                    oro.img.src = "../../src/cartasImage/"+num+".png"
                     break;
                 case "6":
                 case "10":
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 case "44":
                 case "48":
                     objetoAleatorio = bastos
-                    bastos.img.src = "src/cartasSplit/imageonline/"+num+".png"
+                    bastos.img.src = "../../src/cartasImage/"+num+".png"
                     break;
                 case "7":
                 case "11":
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 case "42":
                 case "46":
                     objetoAleatorio = copas
-                    copas.img.src = "src/cartasSplit/imageonline/"+num+".png"
+                    copas.img.src = "../../src/cartasImage/"+num+".png"
                     break;
                 case "8":
                 case "12":
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 case "43":
                 case "47":
                     objetoAleatorio = espadas
-                    espadas.img.src = "src/cartasSplit/imageonline/"+num+".png"
+                    espadas.img.src = "../../src/cartasImage/"+num+".png"
                     break;
             }
             objetoAleatorio.mover(velocidad - 11, 0);
@@ -228,23 +228,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 switch (objetoAleatorio.constructor.name) {
                     case "Bastos":
                         bebedores = obtenerBebedoresJSON("Bastos")
-                        imgUrl = "src/cartasSplit/imageonline/2.png"
+                        imgUrl = "../../src/cartasImage/2.png"
                         break;
                 
                     case "Oro":
                         bebedores = obtenerBebedoresJSON("Oros")
-                        imgUrl = "src/cartasSplit/imageonline/1.png"
+                        imgUrl = "../../src/cartasImage/1.png"
                         break;
                     case "Copas":
                         bebedores = obtenerBebedoresJSON("Copas")
-                        imgUrl = "src/cartasSplit/imageonline/3.png"
+                        imgUrl = "../../src/cartasImage/3.png"
                         break;
                     case "Espadas":
                         bebedores = obtenerBebedoresJSON("Espadas")
-                        imgUrl = "src/cartasSplit/imageonline/4.png"
+                        imgUrl = "../../src/cartasImage/4.png"
                         break;
                 }
-                console.log(bebedores)//[["aa","33"],["aa","33"]]
+                //console.log(bebedores)//[["aa","33"],["aa","33"]]
                 htmlString = ""
                 bebedores.forEach(function(bebedor) {
                     htmlString += "<b>" + bebedor[0] + "</b> reparte " + parseInt(bebedor[1])*2 + " tragos<br>";
@@ -261,11 +261,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     cancelButtonText: `
                         Repartidos  <i class="fa-solid fa-book-skull"></i>
                     `
+                }).then((result) => {
+                    if (result.isDismissed) {
+                        window.location.reload();
+                    }
                 });
-                //TODO MONTAR ALERTA
-                //alert("¡" + objetoAleatorio.constructor.name + " ha llegado a 9 repeticiones!" + "Reparten" + bebedores);
-                
-                
+
                 contexto.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el canvas
                 dibujarBotonEmpezar()
             }

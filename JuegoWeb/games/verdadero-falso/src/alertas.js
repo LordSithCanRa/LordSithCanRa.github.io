@@ -1,6 +1,7 @@
 var palabras = [];
 var palabrasUsadas = [];
 function alertaPalabras(){
+  palabrasUsadas = []
   Swal.fire({
     title: "Palabra",
     input: "text",
@@ -23,8 +24,7 @@ function alertaPalabras(){
 }
 
 function obtenerPalabraAleatoria() {
-  // Verifica si todas las palabras ya han sido usadas
-  if (palabras.length <= 0) {
+  /*if (palabras.length <= 0) {
     Swal.fire({
       title: "Me quede sin palabras...",
       text: "Agrega nuevas palabras para seguir bebiendo!",
@@ -37,10 +37,34 @@ function obtenerPalabraAleatoria() {
   var palabraAleatoria = palabras[indiceAleatorio]
   palabrasUsadas.push(palabraAleatoria)
   palabras.splice(indiceAleatorio-1, 1);
-  
-  return palabraAleatoria;
+  console.log(palabras)
+  return palabraAleatoria;*/
 }
-
+// Función para obtener y eliminar valores únicos del array
+function obtenerYEliminarValorUnico(array) {
+  // Si el array está vacío, muestra una alerta y termina la función
+  if (array.length === 0) {
+    Swal.fire({
+      title: "Me quede sin palabras...",
+      text: "Agrega nuevas palabras para seguir bebiendo!",
+      icon: "warning"
+    });
+      return null;
+  }
+  
+  // Crea un conjunto Set a partir del array para mantener un registro de valores únicos
+  var conjunto = new Set(array);
+  
+  // Obtiene el primer valor único del conjunto
+  var valor = [...conjunto][Math.floor(Math.random() * conjunto.size)];;
+  
+  // Elimina el valor obtenido del conjunto y del array original
+  conjunto.delete(valor);
+  array.splice(array.indexOf(valor), 1);
+  
+  // Devuelve el valor único obtenido
+  return valor;
+}
 function alertaDado(){
     let resultado = Math.floor(Math.random() * 6) + 1;
     let numero;
@@ -64,7 +88,9 @@ function alertaDado(){
         numero = 'six'
         break;
     }
-    palabraSeleccionada = obtenerPalabraAleatoria()
+    palabraSeleccionada = obtenerYEliminarValorUnico(palabras)
+    
+
     let verdad = false;
     if(resultado % 2 == 0){
       verdad = true;

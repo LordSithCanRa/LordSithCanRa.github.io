@@ -16,27 +16,6 @@
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-<script>
-    function agregarColumna() {
-        // Obtener la referencia a la tabla y el cuerpo de la tabla
-        var tabla = document.getElementById("tablaCartas");
-        var cuerpoTabla = tabla.getElementsByTagName("tbody")[0];
-        
-        // Crear una nueva celda en cada fila para la nueva columna
-        var filas = cuerpoTabla.getElementsByTagName("tr");
-        for (var i = 0; i < filas.length; i++) {
-            var nuevaCelda = filas[i].insertCell(-1);
-            nuevaCelda.textContent = "Nuevo Contenido";
-        }
-        
-        // Agregar el encabezado de la nueva columna en el encabezado de la tabla
-        var encabezadoTabla = tabla.getElementsByTagName("thead")[0];
-        var filaEncabezado = encabezadoTabla.getElementsByTagName("tr")[0];
-        var nuevaColumnaEncabezado = document.createElement("th");
-        nuevaColumnaEncabezado.textContent = "Nueva Columna";
-        filaEncabezado.appendChild(nuevaColumnaEncabezado);
-    }
-    </script>
 <body>
     <div class="container">
         <div class="content">
@@ -48,7 +27,7 @@
                     Swal.fire({
                         title: "Agregar apuesta",
                         input: "text",
-                        inputPlaceholder: "Nombre-Tragos",
+                        inputPlaceholder: "Nombre-Tragos (usar , si quiere poner mas de uno)",
                         showCancelButton: true,
                         inputValidator: (value) => {
                             if (!value) {

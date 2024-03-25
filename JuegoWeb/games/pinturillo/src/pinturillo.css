@@ -50,6 +50,12 @@ canvas {
     font-weight: bolder;
     background-color: #000000af;
 }
+.finish{
+    background-color: #209931;
+    color: #fffffff5;
+    font-size: larger;
+    font-weight: bolder;
+}
 .spancontainer {
     display: flex;
     justify-content: center;
