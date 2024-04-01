@@ -52,7 +52,7 @@ footer a {
 
 @media only screen and (max-width: 800px) {
   .container {
-    margin-bottom: calc(200vh * 2); /* Ajusta el margen inferior para dispositivos móviles */
+    margin-bottom: calc(250vh * 2); /* Ajusta el margen inferior para dispositivos móviles */
   }
   footer {
     display: flex;
