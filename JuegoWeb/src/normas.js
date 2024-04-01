@@ -142,10 +142,25 @@ var mayorOmenor = `<ul>
     </ul>
     <br>
     <ul>
-        En sentido de las agujas del reloj, se pondra una primera carta y el siguiente dice si es mayor o menor, si no acierta bebe un trago y repite hasta que acierte
+        En sentido de las agujas del reloj, se pondra una primera carta y el siguiente dice si es mayor o menor, si no acierta bebe un trago y repite hasta que acierte.
+        <br><br>
+        <b>CADA RONDA/VUELTA SE SUBE UN TRAGO MAS</b>
+        <br><br>
+        Se puede decir que <b>la carta siguiente es igual</b>. Si el jugador acierta todos beben el numero de tragos que haya salido en la carta. 
+        <br>
+        <b>En todo caso cuando sea igual la carta si no se dice igual se bebe</b>
     </ul>
 </ul>`;
-
+var arcoiris = `<ul>
+<br>
+    <ul>
+        Este juego esta hecho para ejecutarse en varios dispositivos.
+    </ul>
+    <br>
+    <ul>
+        Elegid un color, quien coincida bebe dos tragos.
+    </ul>
+</ul>`;
 function obtenerNormas(string){
     let html;
     switch (string) {
@@ -179,6 +194,9 @@ function obtenerNormas(string){
             break;
         case "cascada":
             html = cascada;
+            break;
+        case "arcoiris":
+            html = arcoiris;
             break;
     }
     return html;

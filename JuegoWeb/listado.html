@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        .fsd-grid .facetwp-template {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    flex: 5;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.fsd-grid.fsd-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    flex: 5;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.fsd-grid .facetwp-template a {
+    text-decoration: none;
+}
+
+.fsd-grid.fsd-row a {
+    text-decoration: none;
+}
+
+.fsd-grid .facetwp-template a:hover,.fsd-grid .facetwp-template a:visited,.fsd-grid .facetwp-template a:focus {
+    text-decoration: none;
+    outline: 0;
+    cursor: pointer;
+}
+
+.fsd-grid.fsd-row a:hover,.fsd-grid.fsd-row a:visited,.fsd-grid.fsd-row a:focus {
+    text-decoration: none;
+    outline: 0;
+    cursor: pointer;
+}
+
+.fsd-grid-item {
+    height: 550px;
+    flex-basis: 20%;
+    min-width: 259px;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.fsd-grid-item: hover {
+    z-index: 1;
+    cursor: pointer;
+}
+
+.fsd-wrapping-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    color: currentColor;
+}
+
+.fsd-grid-item-wrapper {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+    background: #ececec;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+    transition: padding 0.15s cubic-bezier(0.4,0,0.2,1), margin 0.15s cubic-bezier(0.4,0,0.2,1), box-shadow 0.15s cubic-bezier(0.4,0,0.2,1);
+    position: relative;
+}
+
+.fsd-grid-item:hover .fsd-grid-item-wrapper {
+    padding: 2% 2%;
+    margin: -2% -2%;
+}
+
+.fsd-grid-item-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.fsd-grid-image-top {
+    height: 45%;
+    background-position-x: 50%;
+    width: 120%;
+    background-size: cover;
+    position: relative;
+    background-position-y: 50%;
+    background-position: 50% 50%;
+    left: -10.5%;
+    top: -4.5%;
+}
+
+.fsd-grid-image-top .centered {
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 54.5%;
+    left: 50%;
+    width: 60%;
+    height: 60%;
+    background-position: center;
+}
+
+.fsd-grid-item-content {
+    padding: 0 20px 20px 20px;
+}
+
+.fsd-item-title {
+    font-size: 24px;
+    line-height: 26px;
+    font-weight: 900;
+    margin-bottom: 18px;
+    display: block;
+}
+
+.fsd-item-category {
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.fsd-item-excerpt {
+    margin-bottom: 20px;
+    display: block;
+    font-size: 14px;
+}
+
+.fsd-more-info {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 25px;
+    padding-left: 0;
+    transition-duration: .5s;
+    font-size: 12px;
+    display: flex;
+}
+
+.fsd-more-info .icon-glyph-21:before {
+    font-size: 21px;
+}
+
+.fsd-more-info i {
+    padding-left: 5px;
+    transition-duration: .5s;
+}
+
+.fsd-grid-item:hover .fsd-more-info i {
+    padding-left: 20px;
+    transition-duration: .5s;
+}
+
+@media only screen and (max-width: 1333px) {
+    .fsd-grid .facetwp-template, .fsd-grid.fsd-row {
+        flex: 4;
+    }
+
+    .fsd-grid-item {
+        flex-basis: 25%;
+    }
+}
+
+@media only screen and (max-width: 1073px) {
+    .fsd-grid .facetwp-template, .fsd-grid.fsd-row {
+        flex: 3;
+    }
+
+    .fsd-grid-item {
+        flex-basis: 33.33%;
+    }
+}
+
+@media only screen and (max-width: 815px) {
+    .fsd-grid .facetwp-template, .fsd-grid.fsd-row {
+        flex: 2;
+    }
+
+    .fsd-grid-item {
+        flex-basis: 50%;
+    }
+}
+
+@media only screen and (max-width: 555px) {
+    .fsd-grid .facetwp-template, .fsd-grid.fsd-row {
+        flex: 1;
+    }
+
+    .fsd-grid-item {
+        flex-basis: 100%;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="fsd-grid">
+        <div class="facetwp-template" data-name="noarchivenofeature"><div class="fsd-grid-item">
+          
+        <a class="fsd-wrapping-link" href="https://thecodeteam.com/projects/code-labs/"></a>  <div class="fsd-grid-item-wrapper">
+            
+            <div class="fsd-grid-item-container">
+          <div class="fsd-grid-image-top" style="background:https://github.com/codedellemc/labs;
+        background: -webkit-linear-gradient(#006fb4,#0d2541);
+        background: -o-linear-gradient(#006fb4,#0d2541);
+        background: -moz-linear-gradient(#006fb4,#0d2541);
+        background: linear-gradient([#006fb4,#0d2541);">
+        <span class="centered project-image-bg" style="background-image: url(src/iconGames/borrachoboy.jfif);"></span>
+        </div>
+            
+              <div class="fsd-grid-item-content">
+                <span class="fsd-item-title">{code} Labs</span>
+                
+                <span class="fsd-item-category">Infrastructure as Code</span>
+                
+                <span class="fsd-item-excerpt">
+        {code} Projects in Action</span>
+        
+                <span class="fsd-more-info">View Project <i class="fl-button-icon fl-button-icon-after fa icon-glyph-21"></i></span>
+                
+              </div><!--grid-content-->
+            </div><!--grid-container-->
+          </div><!--grid-wrapper-->
+        </div><!--grid-item-->
+        <div class="fsd-grid-item">
+          
+        <a class="fsd-wrapping-link" href="https://thecodeteam.com/projects/code-vagrant-images/"></a>  <div class="fsd-grid-item-wrapper">
+            
+            <div class="fsd-grid-item-container">
+          <div class="fsd-grid-image-top" style="background:https://github.com/codedellemc/vagrant;
+        background: -webkit-linear-gradient(#007DB8,#00447C);
+        background: -o-linear-gradient(#007DB8,#00447C);
+        background: -moz-linear-gradient(#007DB8,#00447C);
+        background: linear-gradient([#007DB8,#00447C);">
+        <span class="centered project-image-bg" style="background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/code-vagrant-195x300.png);"></span>
+        </div>
+            
+              <div class="fsd-grid-item-content">
+                <span class="fsd-item-title">{code} Vagrant Images</span>
+                
+                <span class="fsd-item-category">Tools and Libraries</span>
+                
+                <span class="fsd-item-excerpt">
+        All {code] by Dell EMC related Vagrant projects</span>
+        
+                <span class="fsd-more-info">View Project <i class="fl-button-icon fl-button-icon-after fa icon-glyph-21"></i></span>
+                
+              </div><!--grid-content-->
+            </div><!--grid-container-->
+          </div><!--grid-wrapper-->
+        </div><!--grid-item-->
+        <div class="fsd-grid-item">
+          
+        <a class="fsd-wrapping-link" href="https://thecodeteam.com/projects/ansible-scaleio/"></a>  <div class="fsd-grid-item-wrapper">
+            
+            <div class="fsd-grid-item-container">
+          <div class="fsd-grid-image-top" style="background:https://github.com/sperreault/ansible-scaleio;
+        background: -webkit-linear-gradient(#313131,#161616);
+        background: -o-linear-gradient(#313131,#161616);
+        background: -moz-linear-gradient(#313131,#161616);
+        background: linear-gradient([#313131,#161616);">
+        <span class="centered project-image-bg" style="background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/ansible-scaleio-.png);"></span>
+        </div>
+            
+              <div class="fsd-grid-item-content">
+                <span class="fsd-item-title">ansible-scaleio</span>
+                
+                <span class="fsd-item-category">Infrastructure as Code</span>
+                
+                <span class="fsd-item-excerpt">
+        ScaleIO ansible playbooks</span>
+        
+                <span class="fsd-more-info">View Project <i class="fl-button-icon fl-button-icon-after fa icon-glyph-21"></i></span>
+                
+              </div><!--grid-content-->
+            </div><!--grid-container-->
+          </div><!--grid-wrapper-->
+        </div><!--grid-item-->
+        <div class="fsd-grid-item">
+          
+        <a class="fsd-wrapping-link" href="https://thecodeteam.com/projects/ceilometer-ecs/"></a>  <div class="fsd-grid-item-wrapper">
+            
+            <div class="fsd-grid-item-container">
+          <div class="fsd-grid-image-top" style="background:https://github.com/jialehuo/ceilometer-ecs;
+        background: -webkit-linear-gradient(#ec2542,#8d1e0b);
+        background: -o-linear-gradient(#ec2542,#8d1e0b);
+        background: -moz-linear-gradient(#ec2542,#8d1e0b);
+        background: linear-gradient([#ec2542,#8d1e0b);">
+        <span class="centered project-image-bg" style="background-image: url(https://thecodeteam.com/wp-content/uploads/2017/08/ceilometer-ecs.png);"></span>
+        </div>
+            
+              <div class="fsd-grid-item-content">
+                <span class="fsd-item-title">ceilometer-ecs</span>
+                
+                <span class="fsd-item-category">Infrastructure as Code</span>
+                
+                <span class="fsd-item-excerpt">
+        This project provides custom Ceilometer meters for EMC Elastic Cloud Storage (ECS).</span>
+        
+                <span class="fsd-more-info">View Project <i class="fl-button-icon fl-button-icon-after fa icon-glyph-21"></i></span>
+                
+              </div><!--grid-content-->
+            </div><!--grid-container-->
+          </div><!--grid-wrapper-->
+        </div><!--grid-item-->
+                                                                                                                        </div></div>
+</body>
+</html>
