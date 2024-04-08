@@ -49,7 +49,15 @@ footer a {
   text-decoration: none;
   margin: 0 10px;
 }
-
+.icono-movil{
+  color: rgb(210, 57, 30);
+  font-size: larger;
+}
+.segundo-icono {
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -30%);
+}
 @media only screen and (max-width: 800px) {
   .container {
     margin-bottom: calc(250vh * 2); /* Ajusta el margen inferior para dispositivos móviles */
