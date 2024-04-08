@@ -64,7 +64,7 @@ function elegirPalabraAleatoria() {
     document.getElementById("masProbablePalabra").innerHTML = palabras[indiceAleatorio]
     
        return palabras[indiceAleatorio];
-    }
+}
   
   const palabraAleatoria = elegirPalabraAleatoria();
   console.log("La palabra elegida es:", palabraAleatoria);

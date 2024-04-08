@@ -68,13 +68,55 @@ function elegirColor() {
 
 function generarColoresAleatorios(numero) {
     var colores = [];
-    for (var i = 0; i < numero; i++) {
+    switch (numero+"") {
+        case "2":
+            colores = ['#FF0000', '#0000FF']
+            break;
+    
+        case "3":
+            colores = ['#FF0000', '#0000FF', '#00FF00']
+            break;
+
+        case "4":
+            colores = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00']
+            break;
+
+        case "5":
+            colores = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF']
+            break;
+
+        case "6":
+            colores = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#FFA500']
+            break;
+        case "7":
+            colores = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#FFA500', '#008000']
+            break;
+        case "8":
+            colores = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#FFA500', '#008000', '#800080']
+            break;
+            
+        case "9":
+            colores = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#FFA500', '#008000', '#800080', '#ADD8E6']
+            break;
+
+        case "10":
+            colores = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#FFA500', '#008000', '#800080', '#ADD8E6', '#FFC0CB']
+            break;
+
+        case "11":
+            colores = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#FFA500', '#008000', '#800080', '#ADD8E6', '#FFC0CB', '#000000']
+            break;
+        case "12":
+            colores = ['#FF0000', '#0000FF', '#00FF00', '#FFFF00', '#FF00FF', '#FFA500', '#008000', '#800080', '#ADD8E6', '#FFC0CB', '#000000', '#FFFFFF']
+            break;
+    }
+    /*for (var i = 0; i < numero; i++) {
         var color = generarColorAleatorio();
         while (colores.includes(color)) {
             color = generarColorAleatorio();
         }
         colores.push(color);
-    }
+    }*/
     return colores;
 }
 

@@ -154,7 +154,7 @@ var mayorOmenor = `<ul>
 var arcoiris = `<ul>
 <br>
     <ul>
-        Este juego esta hecho para ejecutarse en varios dispositivos.
+        Este juego esta hecho para ejecutarse en varios dispositivos. <br><b>MAX</b> 12 Jugadores.
     </ul>
     <br>
     <ul>
@@ -201,7 +201,6 @@ function obtenerNormas(string){
     }
     return html;
 }
-
 function alertaNormas(string){
     Swal.fire({
         title: `<i class="fa-solid fa-book-skull"></i><strong>  NORMAS  </strong><i class="fa-solid fa-book-skull"></i>`,
